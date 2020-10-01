@@ -1,241 +1,397 @@
 ---
-title: API Reference
+title: API Gael
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
-  - ruby
   - python
   - javascript
 
 toc_footers:
-  - <a href='#'>Sign Up for a Developer Key</a>
-  - <a href='https://github.com/slatedocs/slate'>Documentation Powered by Slate</a>
-
-includes:
-  - errors
+  - <a href='https://gael.cl'>Sitio web Gael</a>
 
 search: true
 
 code_clipboard: true
 ---
 
-# Introduction
+# Introducción
 
-Welcome to the TEST API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+Bienvenido a la **API de GAEL** 👋 
 
-We have language bindings in Shell, Ruby, Python, and JavaScript! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+Tenemos ejemplos en distintos lenguajes *(Shell, Python y JavaScript)*. Puedes revisar los códigos de ejemplo en el área oscura de la derecha y puedes cambiar el lenguaje de programación haciendo click en los tabs de la barra superior derecha.
 
-This example API documentation page was created with [Slate](https://github.com/slatedocs/slate). Feel free to edit it and use it as a base for your own API's documentation.
+Esta api está compuesta de dos secciones:
 
-# Authentication
+* **[Pública](#publica)**
+* **Privada**
 
-> To authorize, use this code:
+Todos los endpoints de carácter público presentados en la sección [Pública](#publica), pueden ser pueden ser utilizados libremente en cualquier entorno, **sin propósitos comerciales.**
 
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
+<aside class="warning">
+En caso de detectar uso indebido de cualquiera de los endpoints públicos, procederemos a banear ips <b>sin previo aviso</b>👀
 </aside>
 
-# Kittens
+Para interactuar con cualquiera de los endpoints que no estén presentes en la sección [Pública](#publica), es necesario ser cliente activo de [GAEL](https://gael.cl) y contar con una **ApiKey**. Para más información revisar la sección [Autenticación](#autenticacion)
 
-## Get All Kittens
+La documentación de esta API fué creada utilizando [Slate](https://github.com/slatedocs/slate).
 
-```ruby
-require 'kittn'
+# Pública
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
+## 💲 Todas las monedas
+
+Obtener valores actuales de cambio nominal (CLP) respecto a diversas monedas extranjeras.
+
+Los valores de tipo de cambio se actualizan cada **30 minutos** desde la web del BANCO CENTRAL DE CHILE.
 
 ```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
+import requests
+response = requests.get("https://api.gael.cl/general/public/monedas")
+print(response.text)
 ```
 
 ```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
+curl -X GET --header 'Accept: application/json' 'https://api.gael.cl/general/public/monedas'
 ```
 
 ```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
+//TO-DO
 ```
 
-> The above command returns JSON structured like this:
+> El ejemplo anterior retorna un JSON estructurado de la siguiente forma:
 
 ```json
 [
   {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
+    "Codigo": "UF",
+    "Nombre": "Unidad de Fomento",
+    "Valor": "28708,80"
   },
   {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
+    "Codigo": "USD",
+    "Nombre": "Dolar Americano",
+    "Valor": "788,15"
+  },
+  {
+    "Codigo": "UTM",
+    "Nombre": "Unidad Tributaria Mensual",
+    "Valor": "50372,00"
+  },
+  {
+    "Codigo": "THB",
+    "Nombre": "Baht tailandes",
+    "Valor": "24,95"
+  },
+  .......
 ]
 ```
 
-This endpoint retrieves all kittens.
+### HTTPS Request
 
-### HTTP Request
+`GET https://api.gael.cl/general/public/monedas`
 
-`GET http://example.com/api/kittens`
 
-### Query Parameters
 
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
+## 💲 Moneda por código
 
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+Obtener valor actual de cambio nominal (CLP) de la moneda específica.
+<aside class="notice">
+Puedes revisar los códigos de las monedas utilizando el request general.
 </aside>
 
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
 ```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
+import requests
+response = requests.get("https://api.gael.cl/general/public/monedas/USD")
+print(response.text)
 ```
 
 ```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
+curl -X GET --header 'Accept: application/json' 'https://api.gael.cl/general/public/monedas/USD'
 ```
 
 ```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
+//TO-DO
 ```
 
-> The above command returns JSON structured like this:
+> El ejemplo anterior retorna un JSON estructurado de la siguiente forma:
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+  "Codigo": "USD",
+  "Nombre": "Dolar Americano",
+  "Valor": "788,15",
+  "Fecha": "2020-10-01T19:30:01.000Z"
 }
 ```
 
-This endpoint retrieves a specific kitten.
+### HTTPS Request
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+`GET https://api.gael.cl/general/public/monedas/{codigo}`
 
-### HTTP Request
 
-`GET http://example.com/kittens/<ID>`
 
-### URL Parameters
+## 🌤 Todos los climas
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+Datos climáticos procedentes de estaciones meteorológicas a lo largo del país.
 
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
+Los datos climáticos se actualizan acorde a lo entregado por la web de la DIRECCIÓN METEOROLÓGICA DE CHILE.
 
 ```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
+import requests
+response = requests.get("https://api.gael.cl/general/public/clima")
+print(response.text)
 ```
 
 ```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
+curl -X GET --header 'Accept: application/json' 'https://api.gael.cl/general/public/clima'
 ```
 
 ```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
+//TO-DO
 ```
 
-> The above command returns JSON structured like this:
+> El ejemplo anterior retorna un JSON estructurado de la siguiente forma:
+
+```json
+[
+  {
+    "Codigo": "SCFA",
+    "Estacion": "Antofagasta",
+    "HoraUpdate": "17:00",
+    "Temp": "15",
+    "Humedad": "77",
+    "Estado": "Nublado",
+    "Icono": "parcial.png"
+  },
+  {
+    "Codigo": "SCAR",
+    "Estacion": "Arica",
+    "HoraUpdate": "17:00",
+    "Temp": "18",
+    "Humedad": "73",
+    "Estado": "Nubosidad parcial",
+    "Icono": "parcialalta.png"
+  },
+  .......
+]
+```
+
+### HTTPS Request
+
+`GET https://api.gael.cl/general/public/clima`
+
+
+
+## 🌤 Clima por código
+
+Obtener valor actual del clima registrado por la estación meteorológica específica.
+<aside class="notice">
+Puedes revisar los códigos de las estaciones meteorológicas utilizando el request general.
+</aside>
+
+```python
+import requests
+response = requests.get("https://api.gael.cl/general/public/clima/SCQN")
+print(response.text)
+```
+
+```shell
+curl -X GET --header 'Accept: application/json' 'https://api.gael.cl/general/public/clima/SCQN'
+```
+
+```javascript
+//TO-DO
+```
+
+> El ejemplo anterior retorna un JSON estructurado de la siguiente forma:
 
 ```json
 {
-  "id": 2,
-  "deleted" : ":("
+  "Codigo": "SCQN",
+  "Estacion": "Santiago Centro",
+  "HoraUpdate": "17:20",
+  "Temp": "18.0",
+  "Humedad": "42",
+  "Estado": "Despejado",
+  "Icono": "despejado.png"
 }
 ```
 
-This endpoint deletes a specific kitten.
+### HTTPS Request
 
-### HTTP Request
+`GET https://api.gael.cl/general/public/clima/{codigo}`
 
-`DELETE http://example.com/kittens/<ID>`
 
-### URL Parameters
+## 🚨 Sismos
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
+Datos acerca de últimos sismos ocurridos en Chile.
 
+Los datos sismológicos se actualizan cada 5 minutos según la web del CENTRO SISMOLÓGICO NACIONAL.
+
+```python
+import requests
+response = requests.get("https://api.gael.cl/general/public/sismos")
+print(response.text)
+```
+
+```shell
+curl -X GET --header 'Accept: application/json' 'https://api.gael.cl/general/public/sismos'
+```
+
+```javascript
+//TO-DO
+```
+
+> El ejemplo anterior retorna un JSON estructurado de la siguiente forma:
+
+```json
+[
+  {
+    "Fecha": "2020/10/01 16:30:55",
+    "Latitud": "-21.386",
+    "Longitud": "-69.830",
+    "Profundidad": "44.0",
+    "Magnitud": "3.1 Ml",
+    "Agencia": "GUC",
+    "RefGeografica": "43 km al NO de Quillagua",
+    "FechaUpdate": "01/10/2020 17:30:00"
+  },
+  .......
+]
+```
+
+### HTTPS Request
+
+`GET https://api.gael.cl/general/public/sismos`
+
+
+## 👷‍♀️Indicadores Previred
+
+Información previsional.
+
+La información previsional se actualiza una vez al mes **(día 20)**, según la web de PREVIRED.
+
+<aside class="notice">
+El parámetro <i>periodo</i> tiene el formato MES/AÑO 
+</aside>
+
+```python
+import requests
+response = requests.get("https://api.gael.cl/general/public/previred/062020")
+print(response.text)
+```
+
+```shell
+curl -X GET --header 'Accept: application/json' 'https://api.gael.cl/general/public/previred/062020'
+```
+
+```javascript
+//TO-DO
+```
+
+> El ejemplo anterior retorna un JSON estructurado de la siguiente forma:
+
+```json
+{
+  "PreviredID": 89,
+  "Fecha": "2020-06-20T19:00:02.000Z",
+  "PeriodoMY": "062020",
+  "PeriodoYM": "2006",
+  "UFDescPeriodo": "al 30 de Junio 2020",
+  "UFValPeriodo": "28696,42",
+  "UFDescPeridoAnt": "al 31 de Mayo 2020",
+  "UFValPeriodoAnt": "28716,52",
+  "UTMDesc": "Junio 2020",
+  "UTMVal": "50372",
+  "UTAVal": "604464",
+  "RTIAfpUF": "80,2",
+  "RTIIpsUF": "60",
+  "RTISegCesUF": "120,4",
+  "RTIAfpPesos": "2301453",
+  .......
+}
+```
+
+### HTTPS Request
+
+`GET https://api.gael.cl/general/public/previred/{periodo}`
+
+
+## 🏢Indicadores Impuesto Único
+
+Información sobre impuesto único de 2da categoría.
+
+La información sobre impuesto único se actualiza una vez al mes **(día 20)**, según la web del SII.
+
+<aside class="notice">
+El parámetro <i>periodo</i> tiene el formato MES/AÑO 
+</aside>
+
+```python
+import requests
+response = requests.get("https://api.gael.cl/general/public/impunico/062020")
+print(response.text)
+```
+
+```shell
+curl -X GET --header 'Accept: application/json' 'https://api.gael.cl/general/public/impunico/062020'
+```
+
+```javascript
+//TO-DO
+```
+
+> El ejemplo anterior retorna un JSON estructurado de la siguiente forma:
+
+```json
+{
+  "ImpUnicoID": 14,
+  "FechaUpdate": "2020-06-20T20:00:03.000Z",
+  "PeriodoMY": "062020",
+  "PeriodoYM": "2006",
+  "PeriodoNombre": "Junio 2020",
+  "FechaDesde": "2020-06-01T04:00:00.000Z",
+  "FechaHasta": "2020-06-30T04:00:00.000Z",
+  "TR1Desde": "0",
+  "TR1Hasta": "680022,00",
+  "TR1Factor": "0",
+  "TR1CReb": "0",
+  "TR1TIEfectiva": "0",
+  "TR2Desde": "680022,01",
+  .......
+}
+```
+
+### HTTPS Request
+
+`GET https://api.gael.cl/general/public/impunico/{periodo}`
+
+
+# Autenticación 
+
+> Para autenticar un request, usa el siguiente código::
+
+```python
+#TO-DO
+```
+
+```shell
+# With shell, you can just pass the correct header with each request
+curl "https://api.gael.cl/v2/todos_los_endpoints"
+  -H "ApiKey: xxxxxxxxxxxxxxxx"
+```
+
+```javascript
+//TO-DO
+```
+
+> Asegurate de reemplazar `xxxxxxxxxxxxxxxx` por tu ApiKey.
+
+La API de GAEL utiliza **ApiKeys** para conceder acceso a los diferentes endpoints ofrecidos por la API. Para obtener una **ApiKey** asociada a tu cuenta de cliente, debes enviar un correo electrónico a <a href="mailto:soporte@gael.cl">soporte@gael.cl</a> o contactar directamente con tu agente.
+
+La API espera que la **ApiKey** esté incluida en todos los requests hacia el servidor en un header que se compone de la siguiente manera: 
+
+`ApiKey: xxxxxxxxxxxxxxxx`
+
+<aside class="notice">
+Debes reemplazar <code>xxxxxxxxxxxxxxxx</code> por la <b>ApiKey</b> asociada a tu cuenta. Esta <b>ApiKey</b> sirve para todas las empresas asociadas a esta cuenta.
+</aside>
