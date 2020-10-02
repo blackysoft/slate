@@ -25,7 +25,7 @@ Esta api está compuesta de dos secciones:
 * **[Pública](#publica)**
 * **Privada**
 
-Todos los endpoints de carácter público presentados en la sección [Pública](#publica), pueden ser pueden ser utilizados libremente en cualquier entorno, **sin propósitos comerciales.**
+Todos los endpoints de carácter público presentados en la sección [Pública](#publica), pueden ser utilizados libremente en cualquier entorno, **sin propósitos comerciales.**
 
 <aside class="warning">
 En caso de detectar uso indebido de cualquiera de los endpoints públicos, procederemos a banear ips <b>sin previo aviso</b>👀
@@ -57,7 +57,7 @@ curl -X GET --header 'Accept: application/json' 'https://api.gael.cl/general/pub
 //TO-DO
 ```
 
-> El ejemplo anterior retorna un JSON estructurado de la siguiente forma:
+> El ejemplo anterior retorna el siguiente JSON:
 
 ```json
 [
@@ -112,7 +112,7 @@ curl -X GET --header 'Accept: application/json' 'https://api.gael.cl/general/pub
 //TO-DO
 ```
 
-> El ejemplo anterior retorna un JSON estructurado de la siguiente forma:
+> El ejemplo anterior retorna el siguiente JSON:
 
 ```json
 {
@@ -149,7 +149,7 @@ curl -X GET --header 'Accept: application/json' 'https://api.gael.cl/general/pub
 //TO-DO
 ```
 
-> El ejemplo anterior retorna un JSON estructurado de la siguiente forma:
+> El ejemplo anterior retorna el siguiente JSON:
 
 ```json
 [
@@ -202,7 +202,7 @@ curl -X GET --header 'Accept: application/json' 'https://api.gael.cl/general/pub
 //TO-DO
 ```
 
-> El ejemplo anterior retorna un JSON estructurado de la siguiente forma:
+> El ejemplo anterior retorna el siguiente JSON:
 
 ```json
 {
@@ -241,7 +241,7 @@ curl -X GET --header 'Accept: application/json' 'https://api.gael.cl/general/pub
 //TO-DO
 ```
 
-> El ejemplo anterior retorna un JSON estructurado de la siguiente forma:
+> El ejemplo anterior retorna el siguiente JSON:
 
 ```json
 [
@@ -288,7 +288,7 @@ curl -X GET --header 'Accept: application/json' 'https://api.gael.cl/general/pub
 //TO-DO
 ```
 
-> El ejemplo anterior retorna un JSON estructurado de la siguiente forma:
+> El ejemplo anterior retorna el siguiente JSON:
 
 ```json
 {
@@ -340,7 +340,7 @@ curl -X GET --header 'Accept: application/json' 'https://api.gael.cl/general/pub
 //TO-DO
 ```
 
-> El ejemplo anterior retorna un JSON estructurado de la siguiente forma:
+> El ejemplo anterior retorna el siguiente JSON:
 
 ```json
 {
@@ -368,14 +368,14 @@ curl -X GET --header 'Accept: application/json' 'https://api.gael.cl/general/pub
 
 # Autenticación 
 
-> Para autenticar un request, usa el siguiente código::
+> Para autenticar un request, usa el siguiente código:
 
 ```python
 #TO-DO
 ```
 
 ```shell
-# With shell, you can just pass the correct header with each request
+# Mediante shell, puedes pasar el header correcto en cada request
 curl "https://api.gael.cl/v2/todos_los_endpoints"
   -H "ApiKey: xxxxxxxxxxxxxxxx"
 ```
