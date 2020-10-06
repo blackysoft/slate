@@ -50,7 +50,8 @@ print(response.text)
 ```
 
 ```shell
-curl -X GET --header 'Accept: application/json' 'https://api.gael.cl/general/public/monedas'
+curl -X GET --header 'Accept: application/json' \
+'https://api.gael.cl/general/public/monedas'
 ```
 
 ```javascript
@@ -105,7 +106,8 @@ print(response.text)
 ```
 
 ```shell
-curl -X GET --header 'Accept: application/json' 'https://api.gael.cl/general/public/monedas/USD'
+curl -X GET --header 'Accept: application/json' \
+'https://api.gael.cl/general/public/monedas/USD'
 ```
 
 ```javascript
@@ -142,7 +144,8 @@ print(response.text)
 ```
 
 ```shell
-curl -X GET --header 'Accept: application/json' 'https://api.gael.cl/general/public/clima'
+curl -X GET --header 'Accept: application/json' \
+'https://api.gael.cl/general/public/clima'
 ```
 
 ```javascript
@@ -195,7 +198,8 @@ print(response.text)
 ```
 
 ```shell
-curl -X GET --header 'Accept: application/json' 'https://api.gael.cl/general/public/clima/SCQN'
+curl -X GET --header 'Accept: application/json' \
+'https://api.gael.cl/general/public/clima/SCQN'
 ```
 
 ```javascript
@@ -234,7 +238,8 @@ print(response.text)
 ```
 
 ```shell
-curl -X GET --header 'Accept: application/json' 'https://api.gael.cl/general/public/sismos'
+curl -X GET --header 'Accept: application/json' \
+'https://api.gael.cl/general/public/sismos'
 ```
 
 ```javascript
@@ -281,7 +286,8 @@ print(response.text)
 ```
 
 ```shell
-curl -X GET --header 'Accept: application/json' 'https://api.gael.cl/general/public/previred/062020'
+curl -X GET --header 'Accept: application/json' \
+'https://api.gael.cl/general/public/previred/062020'
 ```
 
 ```javascript
@@ -333,7 +339,8 @@ print(response.text)
 ```
 
 ```shell
-curl -X GET --header 'Accept: application/json' 'https://api.gael.cl/general/public/impunico/062020'
+curl -X GET --header 'Accept: application/json' \
+'https://api.gael.cl/general/public/impunico/062020'
 ```
 
 ```javascript
@@ -376,7 +383,7 @@ curl -X GET --header 'Accept: application/json' 'https://api.gael.cl/general/pub
 
 ```shell
 # Mediante shell, puedes pasar el header correcto en cada request
-curl "https://api.gael.cl/v2/todos_los_endpoints"
+curl "https://api.gael.cl/v2/todos_los_endpoints" \
   -H "ApiKey: xxxxxxxxxxxxxxxx"
 ```
 
