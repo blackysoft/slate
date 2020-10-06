@@ -8,8 +8,12 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
   - <a href='https://gael.cl'>Sitio web Gael</a>
+  - <a href="mailto:soporte@gael.cl">Contacto</a>
 
 search: true
+
+includes:
+- _contabilidad.md
 
 code_clipboard: true
 ---
