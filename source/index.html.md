@@ -7,7 +7,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - javascript
 
 toc_footers:
-  - <a href='https://gael.cl'>🌎 Sitio Web Gael</a>
+  - <a target="_blank" href='https://gael.cloud'>🌎 Sitio Web Gael</a>
   - <a href="mailto:soporte@gael.cl">📧 Contacto</a>
 
 search: true
