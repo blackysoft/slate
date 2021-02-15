@@ -11,7 +11,7 @@ Obtener reporte de libro mayor en formato PDF o HTML
 ```shell
 curl -X GET --header 'Accept: application/json' \
 ' -H "ApiKey: xxxxxxxxxxxxxxxx"' \
-'https://api.gael.cl/v2/general/endpoints/libMayor/reporte'
+'https://api.gael.cloud/v2/general/endpoints/libMayor/reporte'
 ```
 
 ```javascript
@@ -48,7 +48,7 @@ curl -X GET --header 'Accept: application/json' \
 
 ### HTTPS Request
 
-`GET https://api.gael.cl/v2/general/endpoints/libMayor/reporte`
+`GET https://api.gael.cloud/v2/general/endpoints/libMayor/reporte`
 
 ### Parámetros
 

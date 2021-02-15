@@ -8,12 +8,20 @@ language_tabs: # must be one of https://git.io/vQNgJ
 
 toc_footers:
   - <a target="_blank" href='https://gael.cloud'>🌎 Sitio Web Gael</a>
-  - <a href="mailto:soporte@gael.cl">📧 Contacto</a>
+  - <a href="mailto:soporte@gael.cloud">📧 Contacto</a>
 
 search: true
 
 code_clipboard: true
 ---
+
+# ⚠ ¡Aviso Importante! ⚠
+
+Cambiamos el dominio **.cl** por **.cloud**.
+
+<aside class="notice">
+  El dominio <b>.cl</b> funcionará hasta el día <b>01/04/2021</b>
+</aside>
 
 # Introducción
 
@@ -46,13 +54,13 @@ Los valores de tipo de cambio se actualizan cada **30 minutos** desde la web del
 
 ```python
 import requests
-response = requests.get("https://api.gael.cl/general/public/monedas")
+response = requests.get("https://api.gael.cloud/general/public/monedas")
 print(response.text)
 ```
 
 ```shell
 curl -X GET --header 'Accept: application/json' \
-'https://api.gael.cl/general/public/monedas'
+'https://api.gael.cloud/general/public/monedas'
 ```
 
 ```javascript
@@ -89,7 +97,7 @@ curl -X GET --header 'Accept: application/json' \
 
 ### HTTPS Request
 
-`GET https://api.gael.cl/general/public/monedas`
+`GET https://api.gael.cloud/general/public/monedas`
 
 
 
@@ -102,13 +110,13 @@ Puedes revisar los códigos de las monedas utilizando el request general.
 
 ```python
 import requests
-response = requests.get("https://api.gael.cl/general/public/monedas/USD")
+response = requests.get("https://api.gael.cloud/general/public/monedas/USD")
 print(response.text)
 ```
 
 ```shell
 curl -X GET --header 'Accept: application/json' \
-'https://api.gael.cl/general/public/monedas/USD'
+'https://api.gael.cloud/general/public/monedas/USD'
 ```
 
 ```javascript
@@ -128,7 +136,7 @@ curl -X GET --header 'Accept: application/json' \
 
 ### HTTPS Request
 
-`GET https://api.gael.cl/general/public/monedas/{codigo}`
+`GET https://api.gael.cloud/general/public/monedas/{codigo}`
 
 
 
@@ -140,13 +148,13 @@ Los datos climáticos se actualizan acorde a lo entregado por la web de la DIREC
 
 ```python
 import requests
-response = requests.get("https://api.gael.cl/general/public/clima")
+response = requests.get("https://api.gael.cloud/general/public/clima")
 print(response.text)
 ```
 
 ```shell
 curl -X GET --header 'Accept: application/json' \
-'https://api.gael.cl/general/public/clima'
+'https://api.gael.cloud/general/public/clima'
 ```
 
 ```javascript
@@ -181,7 +189,7 @@ curl -X GET --header 'Accept: application/json' \
 
 ### HTTPS Request
 
-`GET https://api.gael.cl/general/public/clima`
+`GET https://api.gael.cloud/general/public/clima`
 
 
 
@@ -194,13 +202,13 @@ Puedes revisar los códigos de las estaciones meteorológicas utilizando el requ
 
 ```python
 import requests
-response = requests.get("https://api.gael.cl/general/public/clima/SCQN")
+response = requests.get("https://api.gael.cloud/general/public/clima/SCQN")
 print(response.text)
 ```
 
 ```shell
 curl -X GET --header 'Accept: application/json' \
-'https://api.gael.cl/general/public/clima/SCQN'
+'https://api.gael.cloud/general/public/clima/SCQN'
 ```
 
 ```javascript
@@ -223,7 +231,7 @@ curl -X GET --header 'Accept: application/json' \
 
 ### HTTPS Request
 
-`GET https://api.gael.cl/general/public/clima/{codigo}`
+`GET https://api.gael.cloud/general/public/clima/{codigo}`
 
 
 ## 🚨 Sismos
@@ -234,13 +242,13 @@ Los datos sismológicos se actualizan cada 5 minutos según la web del CENTRO SI
 
 ```python
 import requests
-response = requests.get("https://api.gael.cl/general/public/sismos")
+response = requests.get("https://api.gael.cloud/general/public/sismos")
 print(response.text)
 ```
 
 ```shell
 curl -X GET --header 'Accept: application/json' \
-'https://api.gael.cl/general/public/sismos'
+'https://api.gael.cloud/general/public/sismos'
 ```
 
 ```javascript
@@ -267,7 +275,7 @@ curl -X GET --header 'Accept: application/json' \
 
 ### HTTPS Request
 
-`GET https://api.gael.cl/general/public/sismos`
+`GET https://api.gael.cloud/general/public/sismos`
 
 
 ## 👷‍♀️Indicadores Previred
@@ -282,13 +290,13 @@ El parámetro <i>periodo</i> tiene el formato MES/AÑO
 
 ```python
 import requests
-response = requests.get("https://api.gael.cl/general/public/previred/062020")
+response = requests.get("https://api.gael.cloud/general/public/previred/062020")
 print(response.text)
 ```
 
 ```shell
 curl -X GET --header 'Accept: application/json' \
-'https://api.gael.cl/general/public/previred/062020'
+'https://api.gael.cloud/general/public/previred/062020'
 ```
 
 ```javascript
@@ -320,7 +328,7 @@ curl -X GET --header 'Accept: application/json' \
 
 ### HTTPS Request
 
-`GET https://api.gael.cl/general/public/previred/{periodo}`
+`GET https://api.gael.cloud/general/public/previred/{periodo}`
 
 
 ## 🏢Indicadores Impuesto Único
@@ -335,13 +343,13 @@ El parámetro <i>periodo</i> tiene el formato MES/AÑO
 
 ```python
 import requests
-response = requests.get("https://api.gael.cl/general/public/impunico/062020")
+response = requests.get("https://api.gael.cloud/general/public/impunico/062020")
 print(response.text)
 ```
 
 ```shell
 curl -X GET --header 'Accept: application/json' \
-'https://api.gael.cl/general/public/impunico/062020'
+'https://api.gael.cloud/general/public/impunico/062020'
 ```
 
 ```javascript
@@ -371,7 +379,7 @@ curl -X GET --header 'Accept: application/json' \
 
 ### HTTPS Request
 
-`GET https://api.gael.cl/general/public/impunico/{periodo}`
+`GET https://api.gael.cloud/general/public/impunico/{periodo}`
 
 
 # Autenticación 
@@ -384,7 +392,7 @@ curl -X GET --header 'Accept: application/json' \
 
 ```shell
 # Mediante shell, puedes pasar el header correcto en cada request
-curl "https://api.gael.cl/v2/todos_los_endpoints" \
+curl "https://api.gael.cloud/v2/todos_los_endpoints" \
   -H "ApiKey: xxxxxxxxxxxxxxxx"
 ```
 
@@ -394,7 +402,7 @@ curl "https://api.gael.cl/v2/todos_los_endpoints" \
 
 > Asegurate de reemplazar `xxxxxxxxxxxxxxxx` por tu ApiKey.
 
-La API de GAEL utiliza **ApiKeys** para conceder acceso a los diferentes endpoints ofrecidos por la API. Para obtener una **ApiKey** asociada a tu cuenta de cliente, debes enviar un correo electrónico a <a href="mailto:soporte@gael.cl">soporte@gael.cl</a> o contactar directamente con tu agente.
+La API de GAEL utiliza **ApiKeys** para conceder acceso a los diferentes endpoints ofrecidos por la API. Para obtener una **ApiKey** asociada a tu cuenta de cliente, debes enviar un correo electrónico a <a href="mailto:soporte@gael.cloud">soporte@gael.cloud</a> o contactar directamente con tu agente.
 
 La API espera que la **ApiKey** esté incluida en todos los requests hacia el servidor en un header que se compone de la siguiente manera: 
 
