@@ -46,6 +46,6 @@ El objeto **error** esta compuesto de la siguiente manera: `error: { type: type,
 
 Parámetro  | Tipo | Descripción
 --------- | ------- | -----------
-**type** | `string` | *Tipo de error* (`internal_error, auth_error`)
+**type** | `string` | *Tipo de error* (`internal_error, auth_error, bad_request_error`)
 **code** | `int` | *Código interno del error*
 **message** | `string` | *Mensaje descriptivo del error*
