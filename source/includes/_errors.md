@@ -9,8 +9,8 @@ Código | Significado
 <b>400</b> | Bad Request - La solicitud contiene información errónea
 <b>401</b> | Unauthorized - Tu ApiKey no es válida o no la estás enviando correctamente según la sección [Autenticación](#autenticacion)
 <b>404</b> | Not Found - El endpoint solicitado no existe
-<b>500</b> | Internal Server Error - Error interno del servidor. Intenta nuevamente mas tarde.
-<b>503</b> | Service Unavailable - Api temporalmente fuera de servicio. Intenta nuevamente mas tarde.
+<b>500</b> | Internal Server Error - Error interno del servidor. Intenta nuevamente más tarde.
+<b>503</b> | Service Unavailable - Api temporalmente fuera de servicio. Intenta nuevamente más tarde.
 
 ## Objeto "error"
 
