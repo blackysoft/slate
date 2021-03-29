@@ -13,6 +13,10 @@ toc_footers:
 search: true
 
 code_clipboard: true
+
+includes:
+  - _errors
+
 ---
 
 # ⚠ ¡Aviso Importante! ⚠
@@ -20,7 +24,7 @@ code_clipboard: true
 Cambiamos el dominio **.cl** por **.cloud**.
 
 <aside class="notice">
-  El dominio <b>.cl</b> funcionará hasta el día <b>01/04/2021</b>
+  El dominio <b>.cl</b> funcionará hasta el día <b>14/04/2021</b> (extendimos el plazo)
 </aside>
 
 # Introducción
