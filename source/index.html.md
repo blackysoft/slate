@@ -16,6 +16,8 @@ code_clipboard: true
 
 includes:
   - _errors
+  - _ucontrol
+  - _categorias
 
 ---
 
