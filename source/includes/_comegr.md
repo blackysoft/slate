@@ -64,6 +64,7 @@ curl "https://api.gael.cloud/v2/comegr/lista" \
       "valor_costo": 978652,
       "valor_final": 1164596,
       "rechazada": false,
+      "emit_fecha": "2021-04-01T12:35:13.000Z",
       "per_cont": "2102"
     }
   ]
