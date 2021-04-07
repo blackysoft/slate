@@ -52,6 +52,11 @@ Para interactuar con cualquiera de los endpoints que no estén presentes en la s
 
 La documentación de esta API fué creada utilizando [Slate](https://github.com/slatedocs/slate).
 
+## A considerar
+* Esta API opera bajo arquitectura **REST** y entrega información formateada en **JSON**
+* Solamente están permitidas las solicitudes utilizando el protocolo **HTTPS**
+* Todas las fechas son entregadas según la norma **[ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)**
+
 # Pública
 
 ## 💲 Todas las monedas
