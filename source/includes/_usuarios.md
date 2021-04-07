@@ -1,4 +1,4 @@
-# Usuario
+# Usuarios
 
 ## Detalle de un usuario
 

@@ -1,4 +1,4 @@
-# Empresa
+# Empresas
 
 ## Lista de empresas
 
@@ -12,7 +12,7 @@ Lista de todas las empresas
 curl "https://api.gael.cloud/v2/empresa/lista" \
   -H "Content-Type: application/json" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
-  -X GET  \
+  -X GET
 ```
 
 ```javascript
