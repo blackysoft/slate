@@ -11,7 +11,7 @@ Solamente podrás consultar:
 * Rendiciones de compra (`ttrans_id: 18`)
 * Rendiciones de egreso (`ttrans_id: 19`)
 
-> Obtener todas las órdenes de compra autorizadas para la empresa con el id = 1
+> Obtener todas las órdenes de compra para la empresa con el id = 1
 
 ```python
 #TO-DO
@@ -22,7 +22,7 @@ curl "https://api.gael.cloud/v2/comegr/lista" \
   -H "Content-Type: application/json" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
   -X GET  \
-  --data '{"empresa_id": 1, "ttrans_id": 1, "estado_id": 4 }'
+  --data '{"empresa_id": 1, "ttrans_id": 1 }'
 ```
 
 ```javascript
