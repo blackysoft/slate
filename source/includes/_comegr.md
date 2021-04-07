@@ -76,18 +76,20 @@ curl "https://api.gael.cloud/v2/comegr/lista" \
 
 ### Parámetros
 
-Parámetro | Requerido | Tipo | Descripción | Default
---------- | ------- | ----------- | ----------- | ----------- 
-<b>empresa_id</b> | Opcional | `int` | *Id de la empresa a consultar* | `null`
-<b>ttrans_id</b> | Opcional | `int` | *Tipo de transacciones a consultar* | `null`
-<b>estado_id_desde</b> | Opcional | `int` | *Estado desde a consultar* | `null`
-<b>estado_id_hasta</b> | Opcional | `int` | *Estado hasta a consultar* | `null`
-<b>area_id</b> | Opcional | `int` | *Id de la unidad de negocio* | `null`
-<b>unegocio_id</b> | Opcional | `int` | *Id de la unidad de negocio* | `null`
-<b>ucontrol_id</b> | Opcional | `int` | *Id de la unidad de control* | `null`
-<b>categoria_id</b> | Opcional | `int` | *Id de la categoría* | `null`
-<b>operacion_id</b> | Opcional | `int` | *Id de la operación* | `null`
-<b>tercero_id</b> | Opcional | `int` | *Id del proveedor* | `null`
+Parámetro | Requerido | Tipo | Formato | Descripción | Default
+--------- | ------- | ----------- | ----------- | ----------- | ----------- 
+<b>empresa_id</b> | Opcional | `int` |  | *Id de la empresa a consultar* | `null`
+<b>ttrans_id</b> | Opcional | `int` |  | *Tipo de transacciones a consultar* | `null`
+<b>estado_id_desde</b> | Opcional | `int` | | *Estado desde a consultar* | `null`
+<b>estado_id_hasta</b> | Opcional | `int` | | *Estado hasta a consultar* | `null`
+<b>fech_emit_desde</b> | Opcional | `date` | `DD-MM-YYYY` | *Fecha emisión desde a consultar* | `null`
+<b>fech_emit_hasta</b> | Opcional | `date` | `DD-MM-YYYY` | *Fecha emisión hasta a consultar* | `hoy`
+<b>area_id</b> | Opcional | `int` | | *Id de la unidad de negocio* | `null`
+<b>unegocio_id</b> | Opcional | `int` |  | *Id de la unidad de negocio* | `null`
+<b>ucontrol_id</b> | Opcional | `int` |  | *Id de la unidad de control* | `null`
+<b>categoria_id</b> | Opcional | `int` |  | *Id de la categoría* | `null`
+<b>operacion_id</b> | Opcional | `int` |  | *Id de la operación* | `null`
+<b>tercero_id</b> | Opcional | `int` |  | *Id del proveedor* | `null`
 
 <aside class="notice">
     Los parámetros se pueden combinar para filtrar la información según consideres necesario.
