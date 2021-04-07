@@ -22,7 +22,7 @@ curl "https://api.gael.cloud/v2/comegr/lista" \
   -H "Content-Type: application/json" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
   -X GET  \
-  --data '{"empresaid": 1, "ttrans_id": 1, "estado_id": 4 }'
+  --data '{"empresa_id": 1, "ttrans_id": 1, "estado_id": 4 }'
 ```
 
 ```javascript
@@ -78,9 +78,10 @@ curl "https://api.gael.cloud/v2/comegr/lista" \
 
 Parámetro | Requerido | Tipo | Descripción | Default
 --------- | ------- | ----------- | ----------- | ----------- 
-<b>empresaid</b> | Opcional | `int` | *Id de la empresa a consultar* | `null`
-<b>ttrans_id</b> | Opcional | `int` | *Tipo de transsaciones a consultar* | `null`
-<b>estado_id</b> | Opcional | `int` | *Estado de transsaciones a consultar* | `null`
+<b>empresa_id</b> | Opcional | `int` | *Id de la empresa a consultar* | `null`
+<b>ttrans_id</b> | Opcional | `int` | *Tipo de transacciones a consultar* | `null`
+<b>estado_id_desde</b> | Opcional | `int` | *Estado desde a consultar* | `null`
+<b>estado_id_hasta</b> | Opcional | `int` | *Estado hasta a consultar* | `null`
 <b>area_id</b> | Opcional | `int` | *Id de la unidad de negocio* | `null`
 <b>unegocio_id</b> | Opcional | `int` | *Id de la unidad de negocio* | `null`
 <b>ucontrol_id</b> | Opcional | `int` | *Id de la unidad de control* | `null`
@@ -94,7 +95,7 @@ Parámetro | Requerido | Tipo | Descripción | Default
 
 ## Detalle Registro
 
-Entrega detalle más completo de la transsación a consultar
+Entrega detalle más completo de la transacción a consultar
 
 Se entregará la siguiente información:
 
