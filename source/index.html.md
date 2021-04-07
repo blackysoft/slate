@@ -16,10 +16,11 @@ code_clipboard: true
 
 includes:
   - _errors
+  - _empresas
   - _usuarios
   - _ucontrol
   - _categorias
-  - _empresas
+  - _comegr
 
 ---
 
