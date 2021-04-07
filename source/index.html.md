@@ -16,8 +16,10 @@ code_clipboard: true
 
 includes:
   - _errors
+  - _usuarios
   - _ucontrol
   - _categorias
+  - _empresas
 
 ---
 
