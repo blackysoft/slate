@@ -4,7 +4,7 @@
 
 Entrega el DTE asociado al documento en formato `PDF`, `XML`, `JSON` o `HTML`
 
-> Obtener el DTE asociado para el documento con id = 6484
+> Obtener el DTE asociado al documento de compra con id = 6484
 
 ```python
 #TO-DO
