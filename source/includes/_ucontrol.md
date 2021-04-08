@@ -57,7 +57,12 @@ curl "https://api.gael.cloud/v2/ucontrol/lista" \
 
 ### HTTPS Request
 
-`GET https://api.gael.cloud/v2/ucontrol/lista`
+<aside class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-get">GET</i>
+        <h6>https://api.gael.cloud/v2/ucontrol/lista</h6>
+    </div>
+</aside>
 
 ### Parámetros
 
@@ -169,7 +174,12 @@ curl "https://api.gael.cloud/v2/ucontrol/detalle" \
 
 ### HTTPS Request
 
-`GET https://api.gael.cloud/v2/ucontrol/detalle`
+<aside class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-get">GET</i>
+        <h6>https://api.gael.cloud/v2/ucontrol/detalle</h6>
+    </div>
+</aside>
 
 ### Parámetros
 

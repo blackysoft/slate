@@ -35,7 +35,12 @@ curl "https://api.gael.cloud/v2/usuario/detalle" \
 
 ### HTTPS Request
 
-`GET https://api.gael.cloud/v2/usuario/detalle`
+<aside class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-get">GET</i>
+        <h6>https://api.gael.cloud/v2/usuario/detalle</h6>
+    </div>
+</aside>
 
 ### Parámetros
 

@@ -73,7 +73,12 @@ curl "https://api.gael.cloud/v2/comegr/lista" \
 
 ### HTTPS Request
 
-`GET https://api.gael.cloud/v2/comegr/lista`
+<aside class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-get">GET</i>
+        <h6>https://api.gael.cloud/v2/comegr/lista</h6>
+    </div>
+</aside>
 
 ### Parámetros
 
@@ -241,7 +246,12 @@ curl "https://api.gael.cloud/v2/comegr/detalle" \
 
 ### HTTPS Request
 
-`GET https://api.gael.cloud/v2/comegr/detalle`
+<aside class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-get">GET</i>
+        <h6>https://api.gael.cloud/v2/comegr/detalle</h6>
+    </div>
+</aside>
 
 ### Parámetros
 

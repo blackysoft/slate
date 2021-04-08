@@ -73,7 +73,12 @@ curl "https://api.gael.cloud/v2/categoria/lista" \
 
 ### HTTPS Request
 
-`GET https://api.gael.cloud/v2/categoria/lista`
+<aside class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-get">GET</i>
+        <h6>https://api.gael.cloud/v2/categoria/lista</h6>
+    </div>
+</aside>
 
 ### Parámetros
 
@@ -140,7 +145,12 @@ curl "https://api.gael.cloud/v2/categoria/detalle" \
 
 ### HTTPS Request
 
-`GET https://api.gael.cloud/v2/categoria/detalle`
+<aside class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-get">GET</i>
+        <h6>https://api.gael.cloud/v2/categoria/detalle</h6>
+    </div>
+</aside>
 
 ### Parámetros
 

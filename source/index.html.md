@@ -111,9 +111,12 @@ curl -X GET --header 'Accept: application/json' \
 
 ### HTTPS Request
 
-`GET https://api.gael.cloud/general/public/monedas`
-
-
+<aside class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-get">GET</i>
+        <h6>https://api.gael.cloud/general/public/monedas</h6>
+    </div>
+</aside>
 
 ## 💲 Moneda por código
 
@@ -150,8 +153,12 @@ curl -X GET --header 'Accept: application/json' \
 
 ### HTTPS Request
 
-`GET https://api.gael.cloud/general/public/monedas/{codigo}`
-
+<aside class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-get">GET</i>
+        <h6>https://api.gael.cloud/general/public/monedas/{codigo}</h6>
+    </div>
+</aside>
 
 
 ## 🌤 Todos los climas
@@ -203,9 +210,12 @@ curl -X GET --header 'Accept: application/json' \
 
 ### HTTPS Request
 
-`GET https://api.gael.cloud/general/public/clima`
-
-
+<aside class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-get">GET</i>
+        <h6>https://api.gael.cloud/general/public/clima</h6>
+    </div>
+</aside>
 
 ## 🌤 Clima por código
 
@@ -245,7 +255,12 @@ curl -X GET --header 'Accept: application/json' \
 
 ### HTTPS Request
 
-`GET https://api.gael.cloud/general/public/clima/{codigo}`
+<aside class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-get">GET</i>
+        <h6>https://api.gael.cloud/general/public/clima/{codigo}</h6>
+    </div>
+</aside>
 
 
 ## 🚨 Sismos
@@ -289,8 +304,12 @@ curl -X GET --header 'Accept: application/json' \
 
 ### HTTPS Request
 
-`GET https://api.gael.cloud/general/public/sismos`
-
+<aside class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-get">GET</i>
+        <h6>https://api.gael.cloud/general/public/sismos</h6>
+    </div>
+</aside>
 
 ## 👷‍♀️Indicadores Previred
 
@@ -342,7 +361,12 @@ curl -X GET --header 'Accept: application/json' \
 
 ### HTTPS Request
 
-`GET https://api.gael.cloud/general/public/previred/{periodo}`
+<aside class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-get">GET</i>
+        <h6>https://api.gael.cloud/general/public/previred/{periodo}</h6>
+    </div>
+</aside>
 
 
 ## 🏢Indicadores Impuesto Único
@@ -393,7 +417,12 @@ curl -X GET --header 'Accept: application/json' \
 
 ### HTTPS Request
 
-`GET https://api.gael.cloud/general/public/impunico/{periodo}`
+<aside class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-get">GET</i>
+        <h6>https://api.gael.cloud/general/public/impunico/{periodo}</h6>
+    </div>
+</aside>
 
 
 # Autenticación 

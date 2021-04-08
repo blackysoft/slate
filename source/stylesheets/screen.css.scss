@@ -631,3 +631,41 @@ html, body {
 .copy-clipboard:hover {
   opacity: 0.8;
 }
+
+// CUSTOM STUFF BY BLACKYSOFT
+////////////////////
+.api-endpoint {
+  background: transparent !important;
+}
+
+.api-endpoint .endpoint-data {
+  background-color: #292929;
+  color: #fff;
+  border-radius: 5px;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #404040;
+  height: 38px;
+}
+
+.api-endpoint .endpoint-data i {
+  display: inline-block;
+  margin: 5px;
+  padding: 4px 12px;
+  line-height: 20px;
+  border-radius: 5px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.label-get {
+  background: #008000;
+}
+
+.api-endpoint .endpoint-data h6 {
+  display: inline-block;
+  margin: 0;
+  text-transform: lowercase;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: italic;
+}

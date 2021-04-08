@@ -49,7 +49,12 @@ curl "https://api.gael.cloud/v2/empresa/lista" \
 
 ### HTTPS Request
 
-`GET https://api.gael.cloud/v2/empresa/lista`
+<aside class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-get">GET</i>
+        <h6>https://api.gael.cloud/v2/empresa/lista</h6>
+    </div>
+</aside>
 
 ## Detalle de empresa
 
@@ -95,7 +100,12 @@ curl "https://api.gael.cloud/v2/empresa/detalle" \
 
 ### HTTPS Request
 
-`GET https://api.gael.cloud/v2/empresa/detalle`
+<aside class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-get">GET</i>
+        <h6>https://api.gael.cloud/v2/empresa/detalle</h6>
+    </div>
+</aside>
 
 ### Parámetros
 
