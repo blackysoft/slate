@@ -21,6 +21,7 @@ includes:
   - _ucontrol
   - _categorias
   - _comegr
+  - _documentos
 
 ---
 

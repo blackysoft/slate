@@ -9,6 +9,7 @@ Código | Significado
 <b>400</b> | Bad Request - La solicitud contiene información errónea
 <b>401</b> | Unauthorized - Tu ApiKey no es válida o no la estás enviando correctamente según la sección [Autenticación](#autenticacion)
 <b>404</b> | Not Found - El endpoint solicitado no existe
+<b>422</b> | Unprocessable Entity - Existe un error de lógica (negocio)
 <b>500</b> | Internal Server Error - Error interno del servidor. Intenta nuevamente más tarde.
 <b>503</b> | Service Unavailable - Api temporalmente fuera de servicio. Intenta nuevamente más tarde.
 
@@ -46,6 +47,6 @@ El objeto **error** esta compuesto de la siguiente manera: `error: { type: type,
 
 Parámetro  | Tipo | Descripción
 --------- | ------- | -----------
-**type** | `string` | *Tipo de error* (`internal_error, auth_error, bad_request_error, `)
+**type** | `string` | *Tipo de error* (`internal_error, auth_error, bad_request_error, logic_error`)
 **code** | `int` | *Código interno del error*
 **message** | `string` | *Mensaje descriptivo del error*
