@@ -11,11 +11,10 @@ Lista de todas las categorías
 ```
 
 ```shell
-curl "https://api.gael.cloud/v2/categoria/lista" \
+curl "https://api.gael.cloud/v2/categoria/lista?empresa_id=1&unegocio_id=2" \
   -H "Content-Type: application/json" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
-  -X GET  \
-  --data '{"ucontrolid": 4}'
+  -X GET
 ```
 
 ```javascript
@@ -28,45 +27,14 @@ curl "https://api.gael.cloud/v2/categoria/lista" \
 "count": 4,
   "data": [
     {
-      "id": 31,
-      "Categoria": "Intereses",
-      "Tipo": true,
-      "ProyectoID": 4,
-      "UnegocioID": 2,
-      "ContCtaID": 150,
-      "EmpresaID": 1,
-      "Activo": true
+      "id": 1,
+      "categoria_nombre": "Materiales",
+      "categoria_tipo": true,
+      "ucontrol_id": 1,
+      "unegocio_id": 2,
+      "empresa_id": 1
     },
-    {
-      "id": 32,
-      "Categoria": "Comisiones Bancarias",
-      "Tipo": true,
-      "ProyectoID": 4,
-      "UnegocioID": 2,
-      "ContCtaID": 154,
-      "EmpresaID": 1,
-      "Activo": true
-    },
-    {
-      "id": 33,
-      "Categoria": "Otros Gastos Bancarios",
-      "Tipo": true,
-      "ProyectoID": 4,
-      "UnegocioID": 2,
-      "ContCtaID": 154,
-      "EmpresaID": 1,
-      "Activo": true
-    },
-    {
-      "id": 96,
-      "Categoria": "Comisiones TC",
-      "Tipo": true,
-      "ProyectoID": 4,
-      "UnegocioID": 2,
-      "ContCtaID": 154,
-      "EmpresaID": 1,
-      "Activo": true
-    }
+    ...
   ]
 }
 ```
@@ -84,10 +52,9 @@ curl "https://api.gael.cloud/v2/categoria/lista" \
 
 Parámetro | Requerido | Tipo | Descripción | Default
 --------- | ------- | ----------- | ----------- | ----------- 
-<b>empresaid</b> | Opcional | `int` | *Id de la empresa a consultar* | `null`
-<b>unegocioid</b> | Opcional | `int` | *Id de la unidad de negocio* | `null`
-<b>ucontrolid</b> | Opcional | `int` | *Id de la unidad de control* | `null`
-<b>borrado</b> | Opcional | `bool` | *Incluye registros borrados* | `false`
+<b>empresa_id</b> | Obligatorio | `int` | *Id de la empresa a consultar* | `null`
+<b>unegocio_id</b> | Opcional | `int` | *Id de la unidad de negocio* | `null`
+<b>ucontrol_id</b> | Opcional | `int` | *Id de la unidad de control* | `null`
 
 <aside class="notice">
     Los parámetros se pueden combinar para filtrar la información según consideres necesario.
@@ -104,11 +71,10 @@ Entrega detalle más completo de la categoría a consultar
 ```
 
 ```shell
-curl "https://api.gael.cloud/v2/categoria/detalle" \
+curl "https://api.gael.cloud/v2/categoria/detalle?categoria_id=1" \
   -H "Content-Type: application/json" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
-  -X GET  \
-  --data '{"id": 27}'
+  -X GET
 ```
 
 ```javascript
@@ -119,27 +85,16 @@ curl "https://api.gael.cloud/v2/categoria/detalle" \
 
 ```json
 {
-  "count": 1,
-  "data": {
-    "id": 27,
-    "Categoria": "Software",
-    "Tipo": true,
-    "ProyectoID": 1,
-    "UnegocioID": 1,
-    "ContCtaID": 57,
-    "EmpresaID": 1,
-    "Activo": true,
-    "Egr": true,
-    "VisTrans": true,
-    "VisRem": false,
-    "VisPresu": true,
-    "VisTi": false,
-    "VisFR": false,
-    "Asignada": true,
-    "Borrado": false,
-    "CreadoPorID": 0,
-    "CreadoFecha": "2020-04-28T20:20:55.353Z"
-  }
+  "id": 1,
+  "categoria_nombre": "Materiales",
+  "categoria_tipo": true,
+  "categoria_activo": true,
+  "ucontrol_id": 1,
+  "unegocio_id": 1,
+  "empresa_id": 1,
+  "asignada": true,
+  "creado_por_id": 1,
+  "creado_fecha": "2021-02-12T20:20:55.353Z"
 }
 ```
 
@@ -156,4 +111,4 @@ curl "https://api.gael.cloud/v2/categoria/detalle" \
 
 Parámetro | Requerido | Tipo | Descripción | Default
 --------- | ------- | ----------- | ----------- | ----------- 
-<b>id</b> | Obligatorio | `int` | *Id de la categoría a consultar* | 
+<b>categoria_id</b> | Obligatorio | `int` | *Id de la categoría a consultar* | 

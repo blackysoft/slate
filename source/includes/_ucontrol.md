@@ -11,11 +11,10 @@ Lista de todas las unidades de control
 ```
 
 ```shell
-curl "https://api.gael.cloud/v2/ucontrol/lista" \
+curl "https://api.gael.cloud/v2/ucontrol/lista?empresa_id=1" \
   -H "Content-Type: application/json" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
-  -X GET  \
-  --data '{"empresaid": 1, "unegocioid": 2}'
+  -X GET
 ```
 
 ```javascript
@@ -26,30 +25,18 @@ curl "https://api.gael.cloud/v2/ucontrol/lista" \
 
 ```json
 {
-  "count": 59,
+  "count": 24,
   "data": [
     {
       "id": 3,
-      "TProy": false,
-      "UNegocioID": 2,
-      "GastIng": false,
-      "UsuarioID": 1,
-      "FechaCreac": "2017-05-19T17:45:30.870Z",
-      "Notas": null,
-      "EmpresaID": 1,
-      "HasFecEjec": false,
-      "FecIni": null,
-      "FecEjec": null,
-      "PerContID": null,
-      "Borrado": true,
-      "Cop": false,
-      "CopID": null,
-      "StatusID": 1,
-      "Lock": true,
-      "TercId": null,
-      "HasAna": false,
-      "PPresu": false,
-      .......
+      "estado_id": 1,
+      "ucontrol_nombre": "Proyecto X",
+      "ucontrol_tipo": false,
+      "unegocio_id": 2,
+      "unegocio_nombre": "Negocio bueno",
+      "usuario_id": 2,
+      "empresa_id": 1
+      ...
     }
   ]
 }
@@ -68,9 +55,7 @@ curl "https://api.gael.cloud/v2/ucontrol/lista" \
 
 Parámetro | Requerido | Tipo | Descripción | Default
 --------- | ------- | ----------- | ----------- | ----------- 
-<b>empresaid</b> | Opcional | `int` | *Id de la empresa a consultar* | `null`
-<b>unegocioid</b> | Opcional | `int` | *Id de la unidad de negocio* | `null`
-<b>borrado</b> | Opcional | `bool` | *Incluye registros borrados* | `false`
+<b>empresa_id</b> | Obligatorio | `int` | *Id de la empresa a consultar* | `null`
 
 <aside class="notice">
     Los parámetros se pueden combinar para filtrar la información según consideres necesario.
@@ -87,11 +72,10 @@ Entrega detalle más completo de la unidad de control a consultar
 ```
 
 ```shell
-curl "https://api.gael.cloud/v2/ucontrol/detalle" \
+curl "https://api.gael.cloud/v2/ucontrol/detalle?ucontrol_id=1" \
   -H "Content-Type: application/json" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
-  -X GET  \
-  --data '{"id": 2046}'
+  -X GET
 ```
 
 ```javascript
@@ -102,73 +86,23 @@ curl "https://api.gael.cloud/v2/ucontrol/detalle" \
 
 ```json
 {
-  "count": 1,
-  "data": {
-    "id": 2046,
-    "Codigo": "XYZ",
-    "TProy": true,
-    "UNegocioID": 12,
-    "GastIng": false,
-    "UsuarioID": 2,
-    "FechaCreac": "2020-01-25T16:47:53.023Z",
-    "Notas": "Desarrollo de plataformas adicionales",
-    "EmpresaID": 1,
-    "HasFecEjec": true,
-    "FecIni": "2020-01-13T00:00:00.000Z",
-    "FecEjec": "2020-11-13T00:00:00.000Z",
-    "PerContID": null,
-    "Borrado": false,
-    "Cop": false,
-    "CopID": 0,
-    "StatusID": 1,
-    "Lock": true,
-    "TercId": 2138,
-    "HasAna": false,
-    "PPresu": true,
-    "PCotiz": true,
-    "PEval": false,
-    "OC": true,
-    "EG": true,
-    "FR": true,
-    "NV": true,
-    "NI": false,
-    "LIQ": false,
-    "REM": false,
-    "TI": false,
-    "Mext": true,
-    "Descripc": "Proyecto de Transformación Digital XYZ",
-    "TClie": 2,
-    "Verif": false,
-    "VerifFec": null,
-    "Mgr2ID": 0,
-    "Forced": false,
-    "CantForced": 0,
-    "Task": true,
-    "Mgr1ID": 0,
-    "Mgr3ID": 0,
-    "Mgr4ID": 0,
-    "tVtaID": 1,
-    "tProyAdmID": 1,
-    "tProyProdID": 1,
-    "ActFij": false,
-    "Nombre": "Unidad de control XYZ",
-    "Notif": false,
-    "ActivFech": "2020-01-25T16:55:22.000Z",
-    "ActivUsuarioID": 2,
-    "EtapaID": 0,
-    "ProyPreStatusID": 0,
-    "BloqFech": null,
-    "BloqUsuarioID": 0,
-    "FinalFech": null,
-    "FinalUsuarioID": 0,
-    "ArchFech": null,
-    "ArchUsuarioID": 0,
-    "TNegocioID": 0,
-    "NegocioEst": 0,
-    "VentaEst": 0,
-    "ConcilNotes": null,
-    "Prioridad": 0
-  }
+  "id": 1,
+  "estado_id": 1,
+  "ucontrol_nombre": "Proyecto X",
+  "creado_fecha": "2021-01-15T17:38:49.940Z",
+  "ucontrol_descripion": "Un proyecto interesante",
+  "ucontrol_tipo": false,
+  "unegocio_id": 1,
+  "unegocio_nombre": "Varios",
+  "usuario_id": 1,
+  "empresa_id": 1,
+  "empresa_nombre": "Empresa Uno",
+  "tipo_cliente": 1,
+  "mext": false,
+  "tercero_id": 15,
+  "activo_por_id": 0,
+  "activo_por_nombre": "Andrés Colombino",
+  "activo_fecha": "2021-01-15T18:05:23.820Z"
 }
 ```
 
@@ -185,4 +119,4 @@ curl "https://api.gael.cloud/v2/ucontrol/detalle" \
 
 Parámetro | Requerido | Tipo | Descripción | Default
 --------- | ------- | ----------- | ----------- | ----------- 
-<b>id</b> | Obligatorio | `int` | *Id de la unidad de control a consultar* | 
+<b>ucontrol_id</b> | Obligatorio | `int` | *Id de la unidad de control a consultar* | 

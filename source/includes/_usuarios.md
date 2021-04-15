@@ -11,11 +11,10 @@ Listado de algunas características de un usuario
 ```
 
 ```shell
-curl "https://api.gael.cloud/v2/usuario/detalle" \
+curl "https://api.gael.cloud/v2/usuario/detalle?usuario_id=1" \
   -H "Content-Type: application/json" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
-  -X GET  \
-  --data '{"usuarioid": 1 }'
+  -X GET
 ```
 
 ```javascript
@@ -46,4 +45,4 @@ curl "https://api.gael.cloud/v2/usuario/detalle" \
 
 Parámetro | Requerido | Tipo | Descripción | Default
 --------- | ------- | ----------- | ----------- | ----------- 
-<b>usuarioid</b> | Obligatorio | `int` | *Id del usuario a consultar* | `null`
+<b>usuario_id</b> | Obligatorio | `int` | *Id del usuario a consultar* | `null`

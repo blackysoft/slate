@@ -22,7 +22,7 @@ curl "https://api.gael.cloud/v2/comegr/lista" \
   -H "Content-Type: application/json" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
   -X GET  \
-  --data '{"empresa_id": 1, "ttrans_id": 1 }'
+  --data '{"empresa_id": 1, "ttrans_id": 1, "con_detalle": false }'
 ```
 
 ```javascript
@@ -65,7 +65,8 @@ curl "https://api.gael.cloud/v2/comegr/lista" \
       "valor_final": 1164596,
       "rechazada": false,
       "emit_fecha": "2021-04-01T12:35:13.000Z",
-      "per_cont": "2102"
+      "per_cont": "2102",
+      ...
     }
   ]
 }
@@ -84,6 +85,7 @@ curl "https://api.gael.cloud/v2/comegr/lista" \
 
 Parámetro | Requerido | Tipo | Formato | Descripción | Default
 --------- | ------- | ----------- | ----------- | ----------- | ----------- 
+<b>con_detalle</b> | Obligatorio | `bool` |  | *Incluir detalles de la transacción* | `null`
 <b>empresa_id</b> | Opcional | `int` |  | *Id de la empresa a consultar* | `null`
 <b>ttrans_id</b> | Opcional | `int` |  | *Tipo de transacciones a consultar* | `null`
 <b>estado_id_desde</b> | Opcional | `int` | | *Estado desde a consultar* | `null`

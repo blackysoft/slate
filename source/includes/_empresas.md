@@ -27,22 +27,12 @@ curl "https://api.gael.cloud/v2/empresa/lista" \
   "data":[
     {
     "id": 1,
-    "Nombre": "Empresa 1",
-    "RUT": "55555555-5",
-    "RazonSocial": "Empresa 1",
-    "Giro": "OTRAS ACTIVIDADES DE SERVICIOS INFORMÁTICOS",
-    "URL": "www.url.com",
-    "Activo": true
+    "empresa_nombre": "Empresa Uno",
+    "empresa_rut": "55555555-5",
+    "empresa_razonsocial": "Empresa Uno SPA",
+    "empresa_estado": true
     },
-    {
-    "id": 1,
-    "Nombre": "Empresa 2",
-    "RUT": "66666666-6",
-    "RazonSocial": "Empresa 2",
-    "Giro": "OTRAS ACTIVIDADES DE SERVICIOS INFORMÁTICOS",
-    "URL": "www.url2.com",
-    "Activo": true
-    }
+    ...
   ]
 }
 ```
@@ -68,11 +58,10 @@ Entrega detalle más completo de la empresa a consultar
 ```
 
 ```shell
-curl "https://api.gael.cloud/v2/empresa/detalle" \
+curl "https://api.gael.cloud/v2/empresa/detalle?empresa_id=1" \
   -H "Content-Type: application/json" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
-  -X GET  \
-  --data '{"id": 1}'
+  -X GET
 ```
 
 ```javascript
@@ -83,18 +72,17 @@ curl "https://api.gael.cloud/v2/empresa/detalle" \
 
 ```json
 {
-  "count": 1,
-  "data":[
-    {
-    "id": 1,
-    "Nombre": "Empresa 1",
-    "RUT": "55555555-5",
-    "RazonSocial": "Empresa 1",
-    "Giro": "OTRAS ACTIVIDADES DE SERVICIOS INFORMÁTICOS",
-    "URL": "www.url.com",
-    "Activo": true
-    }
-  ]
+  "id": 1,
+  "empresa_nombre": "Empresa Uno",
+  "empresa_activa": true,
+  "empresa_rut": "55555555-5",
+  "empresa_razonsocial": "Empresa Uno SpA",
+  "empresa_giro": "Buena Actividad",
+  "empresa_url": "www.empresauno.com",
+  "empresa_direccion": "Av. Siempreviva #1234",
+  "empresa_ciudad": "Ciudad",
+  "empresa_comuna": "Comuna",
+  "empresa_telefono": "123 456 78"
 }
 ```
 
@@ -111,4 +99,4 @@ curl "https://api.gael.cloud/v2/empresa/detalle" \
 
 Parámetro | Requerido | Tipo | Descripción | Default
 --------- | ------- | ----------- | ----------- | ----------- 
-<b>id</b> | Obligatorio | `int` | *Id de la empresa a consultar* | `null`
+<b>empresa_id</b> | Obligatorio | `int` | *Id de la empresa a consultar* | `null`
