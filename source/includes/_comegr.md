@@ -85,7 +85,7 @@ curl "https://api.gael.cloud/v2/comegr/lista" \
 
 Parámetro | Requerido | Tipo | Formato | Descripción | Default
 --------- | ------- | ----------- | ----------- | ----------- | ----------- 
-<b>con_detalle</b> | Obligatorio | `bool` |  | *Incluir detalles de la transacción* | `null`
+<b>con_detalle</b> | Opcional | `bool` |  | *Incluir detalles de la transacción* | `false`
 <b>empresa_id</b> | Opcional | `int` |  | *Id de la empresa a consultar* | `null`
 <b>ttrans_id</b> | Opcional | `int` |  | *Tipo de transacciones a consultar* | `null`
 <b>estado_id_desde</b> | Opcional | `int` | | *Estado desde a consultar* | `null`
