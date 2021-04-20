@@ -4,7 +4,7 @@
 
 Lista de todas las categorías
 
-> Obtener todas las categorías para la unidad de control con el id = 4:
+> Obtener todas las categorías para la empresa con id = 1 y la unidad de negocio con el id = 2:
 
 ```python
 #TO-DO
@@ -12,7 +12,6 @@ Lista de todas las categorías
 
 ```shell
 curl "https://api.gael.cloud/v2/categoria/lista?empresa_id=1&unegocio_id=2" \
-  -H "Content-Type: application/json" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
   -X GET
 ```
@@ -27,14 +26,14 @@ curl "https://api.gael.cloud/v2/categoria/lista?empresa_id=1&unegocio_id=2" \
 "count": 4,
   "data": [
     {
-      "id": 1,
-      "categoria_nombre": "Materiales",
-      "categoria_tipo": true,
-      "ucontrol_id": 1,
+      "id": 32,
+      "nombre": "Comisiones Bancarias",
+      "tipo": true,
+      "ucontrol_id": 4,
       "unegocio_id": 2,
       "empresa_id": 1
     },
-    ...
+    .....
   ]
 }
 ```
@@ -71,8 +70,7 @@ Entrega detalle más completo de la categoría a consultar
 ```
 
 ```shell
-curl "https://api.gael.cloud/v2/categoria/detalle?categoria_id=1" \
-  -H "Content-Type: application/json" \
+curl "https://api.gael.cloud/v2/categoria/detalle?categoria_id=27" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
   -X GET
 ```
@@ -85,16 +83,21 @@ curl "https://api.gael.cloud/v2/categoria/detalle?categoria_id=1" \
 
 ```json
 {
-  "id": 1,
-  "categoria_nombre": "Materiales",
-  "categoria_tipo": true,
-  "categoria_activo": true,
-  "ucontrol_id": 1,
-  "unegocio_id": 1,
-  "empresa_id": 1,
-  "asignada": true,
-  "creado_por_id": 1,
-  "creado_fecha": "2021-02-12T20:20:55.353Z"
+  "count": 1,
+  "data": [
+    {
+      "id": 27,
+      "nombre": "Software",
+      "tipo": true,
+      "activo": true,
+      "ucontrol_id": 1,
+      "unegocio_id": 1,
+      "empresa_id": 1,
+      "asignada": true,
+      "creado_por_id": 1,
+      "creado_fecha": "2020-04-28T20:20:55.353Z"
+    }
+  ]
 }
 ```
 

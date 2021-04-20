@@ -669,3 +669,15 @@ html, body {
   font-size: 14px;
   font-style: italic;
 }
+
+.content aside.warning {
+  background-color: #ff7d84 !important;
+}
+
+.content aside.notice {
+  background-color: #a2deff !important;
+}
+
+.content aside:before {
+  vertical-align: initial !important; 
+}

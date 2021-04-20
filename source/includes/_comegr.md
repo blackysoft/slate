@@ -18,11 +18,9 @@ Solamente podrás consultar:
 ```
 
 ```shell
-curl "https://api.gael.cloud/v2/comegr/lista" \
-  -H "Content-Type: application/json" \
+curl "https://api.gael.cloud/v2/comegr/lista?empresa_id=1&ttrans_id=1" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
-  -X GET  \
-  --data '{"empresa_id": 1, "ttrans_id": 1, "con_detalle": false }'
+  -X GET
 ```
 
 ```javascript
@@ -65,8 +63,7 @@ curl "https://api.gael.cloud/v2/comegr/lista" \
       "valor_final": 1164596,
       "rechazada": false,
       "emit_fecha": "2021-04-01T12:35:13.000Z",
-      "per_cont": "2102",
-      ...
+      "per_cont": "2102"
     }
   ]
 }
@@ -85,7 +82,6 @@ curl "https://api.gael.cloud/v2/comegr/lista" \
 
 Parámetro | Requerido | Tipo | Formato | Descripción | Default
 --------- | ------- | ----------- | ----------- | ----------- | ----------- 
-<b>con_detalle</b> | Opcional | `bool` |  | *Incluir detalles de la transacción* | `false`
 <b>empresa_id</b> | Opcional | `int` |  | *Id de la empresa a consultar* | `null`
 <b>ttrans_id</b> | Opcional | `int` |  | *Tipo de transacciones a consultar* | `null`
 <b>estado_id_desde</b> | Opcional | `int` | | *Estado desde a consultar* | `null`
@@ -98,6 +94,7 @@ Parámetro | Requerido | Tipo | Formato | Descripción | Default
 <b>categoria_id</b> | Opcional | `int` |  | *Id de la categoría* | `null`
 <b>operacion_id</b> | Opcional | `int` |  | *Id de la operación* | `null`
 <b>tercero_id</b> | Opcional | `int` |  | *Id del proveedor* | `null`
+<b>con_detalle</b> | Opcional | `bool` |  | *Incluir detalles de la transacción* | `false`
 
 <aside class="notice">
     Los parámetros se pueden combinar para filtrar la información según consideres necesario.
@@ -120,11 +117,9 @@ Se entregará la siguiente información:
 ```
 
 ```shell
-curl "https://api.gael.cloud/v2/comegr/detalle" \
-  -H "Content-Type: application/json" \
+curl "https://api.gael.cloud/v2/comegr/detalle?id=13262" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
-  -X GET  \
-  --data '{"id": 13262}'
+  -X GET
 ```
 
 ```javascript
@@ -136,64 +131,66 @@ curl "https://api.gael.cloud/v2/comegr/detalle" \
 ```json
 {
   "count": 1,
-  "data": {
-    "id": 13262,
-    "correlativo": "C-0038-21",
-    "ttrans_id": 1,
-    "ttrans_nombre": "Orden de Compra",
-    "creado_por_id": 14,
-    "creado_por_nombre": "Andrés Colombino",
-    "creado_fecha": "2021-03-10T13:03:10.907Z",
-    "estado_id": 7,
-    "empresa_id": 1,
-    "empresa_nombre": "Empresa Pulenta",
-    "area_id": 0,
-    "unegocio_id": 3,
-    "unegocio_nombre": "Gastos de administración y venta",
-    "ucontrol_id": 6,
-    "ucontrol_nombre": "Gastos Generales",
-    "categoria_id": 141,
-    "categoria_nombre": "Dominios",
-    "operacion_id": 10,
-    "operacion_nombre": "Compra Afecta en Otra Moneda",
-    "tercero_id": 32,
-    "tercero_nombre": "Dominio Ahora",
-    "tercero_rut": "76543817-1",
-    "tercero_razsocial": "Dominio Ahora SPA",
-    "tercero_direccion": "Av Las Perdices 3611",
-    "tercero_comuna": "Peñalolén",
-    "tercero_ciudad": "Santiago",
-    "tercero_pais": "Chile",
-    "contacto_id": 0,
-    "contacto_nombre": null,
-    "contacto_telefono": null,
-    "contacto_email": null,
-    "presu_id": 0,
-    "presu_nombre": null,
-    "tasa_iva": 19,
-    "tasa_ret": 11.5,
-    "valor_afecto": 12000,
-    "valor_exento": 0,
-    "valor_iva": 2280,
-    "valor_ie": 0,
-    "valor_ret": 0,
-    "valor_costo": 12000,
-    "valor_total": 14280,
-    "rechazada": false,
-    "per_cont_id": 51,
-    "per_cont": "Mar-21",
-    "cond_comercial": "30 días contra factura",
-    "cond_comercial_detalle": "30 dias contra entrega de factura",
-    "mext": true,
-    "tasa_cambio": 674.5394,
-    "curr_id": 1,
-    "curr_nombre": "Dolar Americano",
-    "valor_afecto_mext": 17.79,
-    "valor_exento_mext": 0,
-    "valor_iva_mext": 3.38,
-    "valor_ret_mext": 0,
-    "valor_total_mext": 21.17
-  },
+  "data": [
+    {
+      "id": 13262,
+      "correlativo": "C-0038-21",
+      "ttrans_id": 1,
+      "ttrans_nombre": "Orden de Compra",
+      "creado_por_id": 14,
+      "creado_por_nombre": "Andrés Colombino",
+      "creado_fecha": "2021-03-10T13:03:10.907Z",
+      "estado_id": 7,
+      "empresa_id": 1,
+      "empresa_nombre": "Empresa Pulenta",
+      "area_id": 0,
+      "unegocio_id": 3,
+      "unegocio_nombre": "Gastos de administración y venta",
+      "ucontrol_id": 6,
+      "ucontrol_nombre": "Gastos Generales",
+      "categoria_id": 141,
+      "categoria_nombre": "Dominios",
+      "operacion_id": 10,
+      "operacion_nombre": "Compra Afecta en Otra Moneda",
+      "tercero_id": 32,
+      "tercero_nombre": "Dominio Ahora",
+      "tercero_rut": "76543817-1",
+      "tercero_razsocial": "Dominio Ahora SPA",
+      "tercero_direccion": "Av Las Perdices 3611",
+      "tercero_comuna": "Peñalolén",
+      "tercero_ciudad": "Santiago",
+      "tercero_pais": "Chile",
+      "contacto_id": 0,
+      "contacto_nombre": null,
+      "contacto_telefono": null,
+      "contacto_email": null,
+      "presu_id": 0,
+      "presu_nombre": null,
+      "tasa_iva": 19,
+      "tasa_ret": 11.5,
+      "valor_afecto": 12000,
+      "valor_exento": 0,
+      "valor_iva": 2280,
+      "valor_ie": 0,
+      "valor_ret": 0,
+      "valor_costo": 12000,
+      "valor_total": 14280,
+      "rechazada": false,
+      "per_cont_id": 51,
+      "per_cont": "Mar-21",
+      "cond_comercial": "30 días contra factura",
+      "cond_comercial_detalle": "30 dias contra entrega de factura",
+      "mext": true,
+      "tasa_cambio": 674.5394,
+      "curr_id": 1,
+      "curr_nombre": "Dolar Americano",
+      "valor_afecto_mext": 17.79,
+      "valor_exento_mext": 0,
+      "valor_iva_mext": 3.38,
+      "valor_ret_mext": 0,
+      "valor_total_mext": 21.17
+    }
+  ],
   "detalles": {
     "count": 1,
     "data": [

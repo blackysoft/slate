@@ -2,7 +2,7 @@
 
 ## Lista de empresas
 
-Lista de todas las empresas
+Lista de todas las empresas **activas**
 
 ```python
 #TO-DO
@@ -10,7 +10,6 @@ Lista de todas las empresas
 
 ```shell
 curl "https://api.gael.cloud/v2/empresa/lista" \
-  -H "Content-Type: application/json" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
   -X GET
 ```
@@ -23,16 +22,15 @@ curl "https://api.gael.cloud/v2/empresa/lista" \
 
 ```json
 {
-  "count": 2,
-  "data":[
+  "count": 1,
+  "data": [
     {
-    "id": 1,
-    "empresa_nombre": "Empresa Uno",
-    "empresa_rut": "55555555-5",
-    "empresa_razonsocial": "Empresa Uno SPA",
-    "empresa_estado": true
-    },
-    ...
+      "id": 1,
+      "nombre": "Empresa Pulenta",
+      "rut": "76658632-5",
+      "razon_social": "Empresa Pulenta SpA",
+      "giro": "OTRAS ACTIVIDADES DE SERVICIOS INFORMÁTICOS"
+    }
   ]
 }
 ```
@@ -59,7 +57,6 @@ Entrega detalle más completo de la empresa a consultar
 
 ```shell
 curl "https://api.gael.cloud/v2/empresa/detalle?empresa_id=1" \
-  -H "Content-Type: application/json" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
   -X GET
 ```
@@ -72,17 +69,22 @@ curl "https://api.gael.cloud/v2/empresa/detalle?empresa_id=1" \
 
 ```json
 {
-  "id": 1,
-  "empresa_nombre": "Empresa Uno",
-  "empresa_activa": true,
-  "empresa_rut": "55555555-5",
-  "empresa_razonsocial": "Empresa Uno SpA",
-  "empresa_giro": "Buena Actividad",
-  "empresa_url": "www.empresauno.com",
-  "empresa_direccion": "Av. Siempreviva #1234",
-  "empresa_ciudad": "Ciudad",
-  "empresa_comuna": "Comuna",
-  "empresa_telefono": "123 456 78"
+  "count": 1,
+  "data": [
+    {
+      "id": 1,
+      "nombre": "Empresa Pulenta",
+      "rut": "76658632-5",
+      "razon_social": "Empresa Pulenta SpA",
+      "giro": "OTRAS ACTIVIDADES DE SERVICIOS INFORMÁTICOS",
+      "activa": true,
+      "url": "www.empresapulenta.cl",
+      "direccion": "Av Las Condes #6541",
+      "ciudad": "Santiago",
+      "comuna": "Las Condes",
+      "telefono": "21892-1258"
+    }
+  ]
 }
 ```
 

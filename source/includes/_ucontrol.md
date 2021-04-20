@@ -4,7 +4,7 @@
 
 Lista de todas las unidades de control
 
-> Obtener todas las unidades de control para la empresa con id = 1 y la unidad de negocio con id = 2:
+> Obtener todas las unidades de control para la empresa con id = 1:
 
 ```python
 #TO-DO
@@ -12,7 +12,6 @@ Lista de todas las unidades de control
 
 ```shell
 curl "https://api.gael.cloud/v2/ucontrol/lista?empresa_id=1" \
-  -H "Content-Type: application/json" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
   -X GET
 ```
@@ -28,16 +27,18 @@ curl "https://api.gael.cloud/v2/ucontrol/lista?empresa_id=1" \
   "count": 24,
   "data": [
     {
-      "id": 3,
-      "estado_id": 1,
-      "ucontrol_nombre": "Proyecto X",
-      "ucontrol_tipo": false,
-      "unegocio_id": 2,
-      "unegocio_nombre": "Negocio bueno",
-      "usuario_id": 2,
+      "id": 39,
+      "estado_id": 5,
+      "nombre": "Proyecto X",
+      "tipo": true,
+      "unegocio_id": 9,
+      "unegocio_nombre": "Negocio XYZ",
+      "creado_por_id": 7,
+      "creado_por": "Juán Perez",
+      "empresa_nombre": "Empresa Pulenta",
       "empresa_id": 1
-      ...
-    }
+    },
+    ......
   ]
 }
 ```
@@ -55,11 +56,8 @@ curl "https://api.gael.cloud/v2/ucontrol/lista?empresa_id=1" \
 
 Parámetro | Requerido | Tipo | Descripción | Default
 --------- | ------- | ----------- | ----------- | ----------- 
-<b>empresa_id</b> | Obligatorio | `int` | *Id de la empresa a consultar* | `null`
+<b>empresa_id</b> | Opcional | `int` | *Id de la empresa a consultar* | `null`
 
-<aside class="notice">
-    Los parámetros se pueden combinar para filtrar la información según consideres necesario.
-</aside>
 
 ## Detalle Unidad de Control
 
@@ -72,8 +70,7 @@ Entrega detalle más completo de la unidad de control a consultar
 ```
 
 ```shell
-curl "https://api.gael.cloud/v2/ucontrol/detalle?ucontrol_id=1" \
-  -H "Content-Type: application/json" \
+curl "https://api.gael.cloud/v2/ucontrol/detalle?ucontrol_id=2046" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
   -X GET
 ```
@@ -86,23 +83,28 @@ curl "https://api.gael.cloud/v2/ucontrol/detalle?ucontrol_id=1" \
 
 ```json
 {
-  "id": 1,
-  "estado_id": 1,
-  "ucontrol_nombre": "Proyecto X",
-  "creado_fecha": "2021-01-15T17:38:49.940Z",
-  "ucontrol_descripion": "Un proyecto interesante",
-  "ucontrol_tipo": false,
-  "unegocio_id": 1,
-  "unegocio_nombre": "Varios",
-  "usuario_id": 1,
-  "empresa_id": 1,
-  "empresa_nombre": "Empresa Uno",
-  "tipo_cliente": 1,
-  "mext": false,
-  "tercero_id": 15,
-  "activo_por_id": 0,
-  "activo_por_nombre": "Andrés Colombino",
-  "activo_fecha": "2021-01-15T18:05:23.820Z"
+  "count": 1,
+  "data": [
+    {
+      "id": 2046,
+      "estado_id": 1,
+      "nombre": "Proyecto X",
+      "creado_fecha": "2020-01-25T16:47:53.023Z",
+      "descripcion": "Transformación Digital Proyecto X",
+      "tipo": true,
+      "unegocio_id": 12,
+      "unegocio_nombre": "Desarrollos a Medida",
+      "usuario_id": 2,
+      "empresa_id": 1,
+      "empresa_nombre": "Empresa Pulenta",
+      "tipo_cliente": 2,
+      "mext": true,
+      "tercero_id": 2138,
+      "activo_por_id": 2,
+      "activo_por_nombre": "Juán Perez",
+      "activo_fecha": "2020-01-25T16:55:22.000Z"
+    }
+  ]
 }
 ```
 

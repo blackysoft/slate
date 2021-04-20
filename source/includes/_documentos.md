@@ -1,8 +1,12 @@
 # Documentos
 
-## Lista de DTE
+## Lista de Documentos
 
-Entrega una lista de documentos detallados, con o sin listado de movimientos, según parámetros de entrada
+Entrega una lista de documentos, con o sin listado de movimientos, según parámetros de entrada
+
+<aside class="notice">
+    Por el momento, este endpoint sólo entrega información relacionada a <b>documentos de compra</b>
+</aside>
 
 > Obtener la lista de documentos, con listado de movimientos, para la empresa con id = 1 y fechas desde 01-04-2021, hasta 05-04-2021
 
@@ -11,8 +15,8 @@ Entrega una lista de documentos detallados, con o sin listado de movimientos, se
 ```
 
 ```shell
-#El siguiente ejemplo retorna la lista de DTE según los filtros indicados
-curl "http://localhost:3001/v2/documentos/lista?id_empresa=1&fech_emit_desde=01-04-2021&fech_emit_hasta=05-04-2021&con_detalle=true" \
+#El siguiente ejemplo retorna la lista de documentos según los filtros indicados
+curl "https://api.gael.cloud/v2/documentos/lista?id_empresa=1&fech_emit_desde=01-04-2021&fech_emit_hasta=05-04-2021&con_detalle=true" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
   -X GET
 ```  
@@ -26,10 +30,10 @@ curl "http://localhost:3001/v2/documentos/lista?id_empresa=1&fech_emit_desde=01-
 ```json
 {
 	"count": 1,
-	"data":[
+	"data": [
     {
       "id": 123,
-      "id_oc": 1234596,
+      "id_oc": 1236,
       "numero_documento": 99875,
       "fecha_emision": "2021-04-01T00:00:00.000Z",
       "fecha_vencimiento": null,
@@ -110,7 +114,6 @@ curl "http://localhost:3001/v2/documentos/lista?id_empresa=1&fech_emit_desde=01-
 
 Parámetro | Requerido | Tipo | Formato | Descripción | Default
 --------- | ------- | ----------- | ----------- | ----------- | ----------- 
-<b>con_detalle</b> | Opcional | `bool` |  | *Parámetro que indica si se requiere el detalle de los movimientos del documento* | `false`
 <b>id_empresa</b> | Opcional | `int` |  | *Id de la empresa* | `null`
 <b>id_tipo_transaccion</b> | Opcional | `int` |  | *Id tipo transacción* | `null`
 <b>estado_id_desde</b> | Opcional | `int` | `0` a `9` | *Id de estado desde* | `0`
@@ -123,11 +126,7 @@ Parámetro | Requerido | Tipo | Formato | Descripción | Default
 <b>id_categoria</b> | Opcional | `int` |  | *Id de la categoría* | `0`
 <b>id_operacion</b> | Opcional | `int` |  | *Id de la operación* | `0`
 <b>id_tercero</b> | Opcional | `int` |  | *Id del tercero* | `0`
-
-<aside class="notice">
-    El parámetro <b>con_detalle</b> puede venir como parámetro indicando <i>true</i> o <i>false</i>, pero si no se recibe como parámetro, se tomará como <i>false</i>
-</aside>
-
+<b>con_detalle</b> | Opcional | `bool` |  | *Indica si se muestran los detalles del documento* | `false`
 
 ## Reporte DTE
 

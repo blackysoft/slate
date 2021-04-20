@@ -1,5 +1,5 @@
 ---
-title: API Gael
+title: API Gael Cloud
 
 language_tabs: # must be one of https://git.io/vQNgJ
   - shell
@@ -30,7 +30,7 @@ includes:
 Cambiamos el dominio **.cl** por **.cloud**.
 
 <aside class="notice">
-  El dominio <b>.cl</b> funcionará hasta el día <b>14/04/2021</b> (extendimos el plazo)
+  El dominio <b>.cl</b> funcionará hasta el día <b>03/05/2021</b> (extendimos el plazo... de nuevo😋)
 </aside>
 
 # Introducción
@@ -52,12 +52,13 @@ En caso de detectar uso indebido de cualquiera de los endpoints públicos, proce
 
 Para interactuar con cualquiera de los endpoints que no estén presentes en la sección [Pública](#publica), es necesario ser cliente activo de [GAEL](https://gael.cl) y contar con una **ApiKey**. Para más información revisar la sección [Autenticación](#autenticacion)
 
-La documentación de esta API fué creada utilizando [Slate](https://github.com/slatedocs/slate).
+Si vas a utilizar nuestra API, es importante que **tengas en consideración los siguientes puntos:**
 
-## A considerar
-* Esta API opera bajo arquitectura **REST** y entrega información formateada en **JSON**
-* Solamente están permitidas las solicitudes utilizando el protocolo **HTTPS**
-* Todas las fechas son entregadas según la norma **[ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)**
+* Esta API opera bajo arquitectura [REST](https://www.redhat.com/es/topics/api/what-is-a-rest-api) y entrega información formateada en [JSON](https://www.json.org/json-es.html)
+* Solamente están permitidas las solicitudes utilizando el protocolo [HTTPS](https://developers.google.com/search/docs/advanced/security/https?hl=es)
+* Todas las fechas son entregadas según la norma [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
+
+La documentación de esta API fué creada utilizando [Slate](https://github.com/slatedocs/slate).
 
 # Pública
 

@@ -4,7 +4,7 @@
 
 Listado de algunas características de un usuario
 
-> Obtener aquellos detalles de un usuario con id = 1:
+> Obtener detalles de un usuario con id = 1:
 
 ```python
 #TO-DO
@@ -12,7 +12,6 @@ Listado de algunas características de un usuario
 
 ```shell
 curl "https://api.gael.cloud/v2/usuario/detalle?usuario_id=1" \
-  -H "Content-Type: application/json" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
   -X GET
 ```
@@ -25,10 +24,16 @@ curl "https://api.gael.cloud/v2/usuario/detalle?usuario_id=1" \
 
 ```json
 {
-  "id": 1,
-  "Nombre": "Esteban Rojas",
-  "Email": "esteban@gael.cloud",
-  .......
+  "count": 1,
+  "data": [
+    {
+      "id": 1,
+      "nombre": "Juán Perez",
+      "nombre_corto": "Juanito",
+      "email": "juanito@perez.cl",
+      "creado_fecha": "2017-05-15T11:45:13.117Z"
+    }
+  ]
 }
 ```
 
