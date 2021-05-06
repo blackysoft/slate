@@ -22,6 +22,7 @@ includes:
   - _categorias
   - _comegr
   - _documentos
+  - _remuneraciones
 
 ---
 
