@@ -27,14 +27,6 @@ includes:
 
 ---
 
-# ⚠ ¡Aviso Importante! ⚠
-
-Cambiamos el dominio **.cl** por **.cloud**.
-
-<aside class="notice">
-  El dominio <b>.cl</b> funcionará hasta el día <b>03/05/2021</b> (extendimos el plazo... de nuevo😋)
-</aside>
-
 # Introducción
 
 Bienvenido a la **API de GAEL** 👋 
