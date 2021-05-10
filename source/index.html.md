@@ -7,6 +7,7 @@ language_tabs: # must be one of https://git.io/vQNgJ
   - javascript
 
 toc_footers:
+  - <a target="_blank" href='https://status.gael.cloud'>🚩 Estado Gael Cloud</a>
   - <a target="_blank" href='https://gael.cloud'>🌎 Sitio Web Gael</a>
   - <a href="mailto:soporte@gael.cloud">📧 Contacto</a>
 
