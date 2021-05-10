@@ -257,3 +257,48 @@ curl "https://api.gael.cloud/v2/comegr/detalle?id=13262" \
 Parámetro | Requerido | Tipo | Descripción | Default
 --------- | ------- | ----------- | ----------- | ----------- 
 <b>id</b> | Obligatorio | `int` | *Id de la transacción a consultar* | 
+
+
+## Reporte Compras / Egresos
+
+Muestra un informe del registro de Compra o de Egreso asociado en formato `PDF` o `HTML`
+
+> Obtener el reporte asociado al registro Compra/Egreso con id = 2490
+
+```python
+#TO-DO
+```
+
+```shell
+#El siguiente ejemplo retorna el reporte en formato PDF
+curl "https://api.gael.cloud/v2/comegr/reporte?id=2490&formato=pdf" \
+  -H "ApiKey: xxxxxxxxxxxxxxxx" \
+  -X GET \
+  --output reporte_comegr.pdf
+
+#El siguiente ejemplo retorna el reporte en formato HTML
+curl "https://api.gael.cloud/v2/comegr/reporte?id=2490&formato=html" \
+  -H "ApiKey: xxxxxxxxxxxxxxxx" \
+  -X GET
+```
+
+```javascript
+//TO-DO
+```
+
+### HTTPS Request
+
+<aside class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-get">GET</i>
+        <h6>https://api.gael.cloud/v2/comegr/reporte</h6>
+    </div>
+</aside>
+
+
+### Parámetros
+
+Parámetro | Requerido | Tipo | Formato | Descripción | Default
+--------- | ------- | ----------- | ----------- | ----------- | ----------- 
+<b>id</b> | Obligatorio | `int` |  | *Id del registro de salida a consultar* | `null`
+<b>formato</b> | Obligatorio | `string` | `pdf` `html` | *Formato del reporte* | `null`
