@@ -63,7 +63,8 @@ curl "https://api.gael.cloud/v2/comegr/lista?empresa_id=1&ttrans_id=1" \
       "valor_final": 1164596,
       "rechazada": false,
       "emit_fecha": "2021-04-01T12:35:13.000Z",
-      "per_cont": "2102"
+      "per_cont": "2102",
+      "cod_custom": "SM-965"
     }
   ]
 }

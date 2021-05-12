@@ -79,6 +79,7 @@ curl "https://api.gael.cloud/v2/documentos/lista?id_empresa=1&fech_emit_desde=01
       "anticipo": false,
       "es_factura_cedida": false,
       "id_tercero_cesion": 0,
+      "cod_custom": "SM-765",
       "detalles":{
         "count": 1,
         "data":[
