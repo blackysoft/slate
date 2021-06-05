@@ -50,6 +50,9 @@ Obtener todas las liquidaciones de sueldo para una empresa y período determinad
 
 <aside class="notice">
   Este endpoint retorna un archivo comprimido en formato <b>.zip</b> con todas las liquidaciones de sueldo en formato <b>.pdf</b> generadas para el período y empresa solicitadas.
+  <br>
+  <br>
+  Las remuneraciones se encontrarán agrupadas por unidad de control en diferentes carpetas.
 </aside>
 
 > Obtener las liquidaciones de sueldo de Enero 2021 para la empresa con el id = 1:
