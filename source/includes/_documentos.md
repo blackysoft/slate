@@ -141,7 +141,7 @@ Entrega el DTE asociado al documento en formato `PDF`, `XML`, `JSON` o `HTML`
 
 ```shell
 #El siguiente ejemplo retorna el DTE con su copia cedible en formato PDF
-curl "https://api.gael.cloud/v2/documentos/reporte?doc_id=6484&is_doc_venta=false&formato=pdf&cedible=2" \
+curl "https://api.gael.cloud/v2/documentos/reporte?doc_id=6484&is_doc_venta=false&formato=pdf&cedible=2&tipo_papel=0" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
   -X GET \
   --output dte_cedible.pdf
@@ -306,6 +306,7 @@ Parámetro | Requerido | Tipo | Formato | Descripción | Default
 <b>is_doc_venta</b> | Obligatorio | `bool` |  | *Documento es de compra o de venta* | `null`
 <b>formato</b> | Obligatorio | `string` | `pdf` `html` `json` `xml` | *Formato del reporte* | `null`
 <b>cedible</b> | Opcional | `int` | `0` `1` `2` | *Copia cedible o no* | `0`
+<b>tipo_papel</b> | Opcional | `int` | `0` `1` | *Formato Papel para el reporte* | `0`
 
 <aside class="notice">
     El parámetro <b>cedible</b> sólo tiene efecto cuando el parámetro <b>formato</b> tiene valor <i>pdf</i> o <i>html</i>
@@ -317,6 +318,14 @@ El parámetro **cedible** admite los valores `0` `1` `2`. Estos configuran el re
 * `cedible=1` Reporte de DTE **solo** copia cedible
 * `cedible=2` Reporte de DTE **con** copia cedible
 
+<aside class="notice">
+    Al igual que el parámetro anterior, el parámetro <b>tipo_papel</b> sólo tiene efecto cuando el parámetro <b>formato</b> tiene valor <i>pdf</i> o <i>html</i>
+</aside>
+
+El parámetro **tipo_papel** admite los valores `0` `1`. Estos configuran el reporte de la siguiente manera:
+
+* `tipo_papel=0` Reporte de DTE en formato **papel oficio/carta**
+* `tipo_papel=1` Reporte de DTE en formato **papel continuo**
 
 ## Lista BHE
 
