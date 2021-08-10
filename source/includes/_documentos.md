@@ -453,3 +453,57 @@ Parámetro | Requerido | Tipo | Formato | Descripción | Default
 --------- | ------- | ----------- | ----------- | ----------- | ----------- 
 <b>empresa_id</b> | Opcional | `int` |  | *Id de la empresa* | `null`
 <b>codigo</b> | Obligatorio | `string` | | *Código de barras* | `null`
+
+## Reporte Recibo
+
+Muestra un reporte del Recibo asociado en formato `PDF` o `HTML`
+
+> Obtener el recibo asociado con su posvta_id = 2490
+
+```python
+#TO-DO
+```
+
+```shell
+#El siguiente ejemplo retorna el reporte en formato PDF
+curl "https://api.gael.cloud/v2/documentos/recibo/reporte?posvta_id=2490&formato=pdf&tipo_papel=1" \
+  -H "ApiKey: xxxxxxxxxxxxxxxx" \
+  -X GET \
+  --output reporte_recibo.pdf
+
+#El siguiente ejemplo retorna el reporte en formato HTML
+curl "https://api.gael.cloud/v2/documentos/recibo/reporte?posvta_id=2490&formato=html&tipo_papel=0" \
+  -H "ApiKey: xxxxxxxxxxxxxxxx" \
+  -X GET
+```
+
+```javascript
+//TO-DO
+```
+
+### HTTPS Request
+
+<aside class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-get">GET</i>
+        <h6>https://api.gael.cloud/v2/documentos/recibo/reporte</h6>
+    </div>
+</aside>
+
+
+### Parámetros
+
+Parámetro | Requerido | Tipo | Formato | Descripción | Default
+--------- | ------- | ----------- | ----------- | ----------- | ----------- 
+<b>posvta_id</b> | Obligatorio | `int` |  | *Id del recibo a consultar* | `null`
+<b>formato</b> | Obligatorio | `string` | `pdf` `html` | *Formato del reporte* | `null`
+<b>tipo_papel</b> | Obligatorio | `int` | `0` `1` | *Formato Papel para el reporte* | `0`
+
+<aside class="notice">
+    El parámetro <b>tipo_papel</b> sólo tiene efecto cuando el parámetro <b>formato</b> tiene valor <i>pdf</i> o <i>html</i>
+</aside>
+
+El parámetro **tipo_papel** admite los valores `0` `1`. Estos configuran el reporte de la siguiente manera:
+
+* `tipo_papel=0` Reporte Recibo en formato **papel oficio/carta**
+* `tipo_papel=1` Reporte Recibo en formato **papel continuo**
