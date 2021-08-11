@@ -24,6 +24,7 @@ includes:
   - _comegr
   - _documentos
   - _remuneraciones
+  - _contabilidad
 
 ---
 
