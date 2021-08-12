@@ -23,6 +23,7 @@ includes:
   - _categorias
   - _comegr
   - _fondrend
+  - _presupuestos
   - _documentos
   - _remuneraciones
   - _contabilidad
