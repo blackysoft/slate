@@ -205,13 +205,13 @@ Muestra los registros, ya sea certificado de sueldo u honorarios, por año de un
 
 ```shell
 #El siguiente ejemplo retorna el reporte en formato PDF
-curl "https://api.gael.cloud/v2/contabilidad/certificados?empresa_id=2&tercero_id=21&certificado=0&año=2021&formato=pdf" \
+curl "https://api.gael.cloud/v2/contabilidad/certificados?empresa_id=2&tercero_id=21&certificado=0&anho=2021&formato=pdf" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
   -X GET \
   --output certificado.pdf
 
 #El siguiente ejemplo retorna el reporte en formato HTML
-curl "https://api.gael.cloud/v2/contabilidad/certificados?empresa_id=2&tercero_id=21&certificado=1&año=2021&formato=html" \
+curl "https://api.gael.cloud/v2/contabilidad/certificados?empresa_id=2&tercero_id=21&certificado=1&anho=2021&formato=html" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
   -X GET  
 ```
@@ -236,7 +236,7 @@ Parámetro | Requerido | Tipo | Formato | Descripción | Default
 <b>empresa_id</b> | Obligatorio | `int` |  | *Id de la empresa* | `null`
 <b>tercero_id</b> | Obligatorio | `int` |  | *Id del trabajador* | `null`
 <b>certificado</b> | Obligatorio | `int` |  | *Certificado a consultar* | `null`
-<b>año</b> | Obligatorio | `string` | `YYMM` | *Año a consultar* | `null`
+<b>anho</b> | Obligatorio | `string` | `YYYY` | *Año a consultar* | `null`
 <b>formato</b> | Obligatorio | `string` | `pdf` `html` | *Formato del reporte* | `null`
 
 El parámetro **certificado** admite los valores `0` `1`. Estos configuran el reporte de la siguiente manera:
@@ -258,13 +258,13 @@ Obtiene los registros, ya sea para declaración jurada sobre sueldos u honorario
 
 ```shell
 #El siguiente ejemplo retorna el reporte en formato PDF
-curl "https://api.gael.cloud/v2/contabilidad/decjuradas?empresa_id=3&formulario=1887&año=2021&formato=pdf" \
+curl "https://api.gael.cloud/v2/contabilidad/decjuradas?empresa_id=3&formulario=1887&anho=2021&formato=pdf" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
   -X GET \
   --output declaracion_jurada.pdf
 
 #El siguiente ejemplo retorna el reporte en formato HTML
-curl "https://api.gael.cloud/v2/contabilidad/decjuradas?empresa_id=3&formulario=1887&año=2021&formato=html" \
+curl "https://api.gael.cloud/v2/contabilidad/decjuradas?empresa_id=3&formulario=1887&anho=2021&formato=html" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
   -X GET  
 ```
@@ -288,7 +288,7 @@ Parámetro | Requerido | Tipo | Formato | Descripción | Default
 --------- | ------- | ----------- | ----------- | ----------- | ----------- 
 <b>empresa_id</b> | Obligatorio | `int` |  | *Id de la empresa* | `null`
 <b>formulario</b> | Obligatorio | `int` |  | *DecTipo formulario DJ a consultar* | `null`
-<b>año</b> | Obligatorio | `string` | `YYMM` | *Año a consultar* | `null`
+<b>anho</b> | Obligatorio | `string` | `YYYY` | *Año a consultar* | `null`
 <b>formato</b> | Obligatorio | `string` | `pdf` `html` | *Formato del reporte* | `null`
 
 El parámetro **formulario** admite los siguientes valores:

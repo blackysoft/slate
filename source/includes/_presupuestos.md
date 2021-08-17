@@ -9,14 +9,14 @@ Se podrán consultar:
 * Presupuestos de Gastos (`tipo: 0`)
 * Presupuestos de Ventas (`tipo: 1`)
 
-> Obtener todos los presupuestos de Ventas para la empresa con el id = 5
+> Obtener todos los presupuestos de Gastos para la empresa con el id = 5
 
 ```python
 #TO-DO
 ```
 
 ```shell
-curl "https://api.gael.cloud/v2/presupuestos/lista?empresa_id=5&tipo=1" \
+curl "https://api.gael.cloud/v2/presupuestos/lista?empresa_id=5&tipo=0" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
   -X GET
 ```
@@ -33,7 +33,7 @@ curl "https://api.gael.cloud/v2/presupuestos/lista?empresa_id=5&tipo=1" \
     "data": [
 	    {
 	        "id": 12345,
-	        "tipo_presupuesto": true,
+	        "tipo_presupuesto": false,
 	        "presu_nombre": "Evento Juego Entretenido",
 	        "creado_por_id": 64,
 	        "creado_por_nombre": "George Lynch",
@@ -110,13 +110,10 @@ Parámetro | Requerido | Tipo | Formato | Descripción | Default
 <b>fech_aprob_hasta</b> | Opcional | `date` | `DD-MM-YYYY` | *Fecha aprobación hasta a consultar* | `hoy`
 <b>fech_cerrado_desde</b> | Opcional | `date` | `DD-MM-YYYY` | *Fecha cierre desde a consultar* | `null`
 <b>fech_cerrado_hasta</b> | Opcional | `date` | `DD-MM-YYYY` | *Fecha cierre hasta a consultar* | `hoy`
-<b>fech_rech_desde</b> | Opcional | `date` | `DD-MM-YYYY` | *Fecha rechazado desde a consultar* | `null`
-<b>fech_rech_hasta</b> | Opcional | `date` | `DD-MM-YYYY` | *Fecha rechazado hasta a consultar* | `hoy`
 <b>area_id</b> | Opcional | `int` | | *Id de la unidad de negocio* | `null`
 <b>unegocio_id</b> | Opcional | `int` |  | *Id de la unidad de negocio* | `null`
 <b>ucontrol_id</b> | Opcional | `int` |  | *Id de la unidad de control* | `null`
 <b>tercero_id</b> | Opcional | `int` |  | *Id del proveedor* | `null`
-<b>moneda_extranjera</b> | Opcional | `bool` |  | *Si presupuesto usa moneda extranjera* | `false`
 <b>con_detalle</b> | Opcional | `bool` |  | *Incluir detalles de la transacción* | `false`
 
 <aside class="notice">
@@ -158,7 +155,7 @@ curl "https://api.gael.cloud/v2/presupuestos/detalle?id=12345" \
     "data": [
 	    {
 	        "id": 12345,
-	        "tipo_presupuesto": true,
+	        "tipo_presupuesto": false,
 	        "presu_nombre": "Evento Juego Entretenido",
 	        "creado_por_id": 64,
 	        "creado_por_nombre": "George Lynch",
