@@ -1,14 +1,14 @@
 # Documentos
 
-## Lista de Documentos
+## Lista de documentos de compra
 
-Entrega una lista de documentos, con o sin listado de movimientos, según parámetros de entrada
+Entrega una lista de documentos de compra, con o sin listado de movimientos, según parámetros de entrada
 
 <aside class="notice">
-    Por el momento, este endpoint sólo entrega información relacionada a <b>documentos de compra</b>
+    Este endpoint entrega información relacionada a <b>documentos de compra</b>, con o sin detalle de movimientos por documento.
 </aside>
 
-> Obtener la lista de documentos, con listado de movimientos, para la empresa con id = 1 y fechas desde 01-04-2021, hasta 05-04-2021
+> Obtener la lista de documentos, <b>con</b> listado de movimientos, para la empresa con id = 1 y fechas desde 01-05-2021, hasta 02-05-2021
 
 ```python
 #TO-DO
@@ -16,8 +16,8 @@ Entrega una lista de documentos, con o sin listado de movimientos, según parám
 
 ```shell
 #El siguiente ejemplo retorna la lista de documentos según los filtros indicados
-curl "https://api.gael.cloud/v2/documentos/lista?id_empresa=1&fech_emit_desde=01-04-2021&fech_emit_hasta=05-04-2021&con_detalle=true" \
-  -H "ApiKey: xxxxxxxxxxxxxxxx" \
+curl "https://api.gael.cloud/v2/documentos/compra/lista?id_empresa=1&fech_emit_desde=01-05-2021&fech_emit_hasta=02-05-2021&con_detalle=true" \
+  -H "ApiKey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX" \
   -X GET
 ```  
 
@@ -29,71 +29,68 @@ curl "https://api.gael.cloud/v2/documentos/lista?id_empresa=1&fech_emit_desde=01
 
 ```json
 {
-	"count": 1,
-	"data": [
+  "count": 1,
+  "data": [
     {
-      "id": 123,
-      "id_oc": 1236,
-      "numero_documento": 99875,
-      "fecha_emision": "2021-04-01T00:00:00.000Z",
+      "id": 12351,
+      "numero_documento": 223144,
+      "fecha_emision": "2021-05-02T00:00:00.000Z",
       "fecha_vencimiento": null,
-      "total_afecto": 100000,
-      "total_excento": 0,
-      "total_iva": 19000,
-      "total_final": 119000,
-      "es_documento_parcial": true,
-      "id_tipo_doc": 2,
-      "recepcion_ok": true,
-      "id_recibido_por": 6,
-      "fecha_recepcion": "2021-04-13T17:16:43.523Z",
-      "es_moneda_extranjera": false,
-      "id_moneda": 0,
-      "nombre_documento": "Factura Electrónica",
-      "nombre": "Steve Rogers",
-      "descripcion_moneda": "Peso Chileno",
-      "id_periodo_contable": 20,
-      "rut_tercero": "12345678-9",
-      "razon_social": "Stars & Stripres CO.",
-      "periodo_contable": "Abr-21",
-      "id_tercero": 123,
+      "total_afecto": 0,
+      "total_exwento": 6400,
+      "total_iva": 0,
+      "total_final": 6400,
       "tasa_iva": 19,
+      "es_documento_parcial": true,
+      "id_tipo_doc": 4,
+      "recibido_ok": true,
+      "id_recibido_por": 6,
+      "fecha_recepcion": "2021-06-07T12:53:36.120Z",
+      "es_moneda_extranjera": false,
+      "nombre_documento": "Factura Exenta Electrónica",
+      "descripcion_moneda": "Peso Chileno",
+      "nombre_emitido_por": "Clark Kent",
+      "id_periodo_contable": 21,
+      "periodo_contable": "May-21",
+      "id_tercero": 581,
+      "rut_tercero": "76574879-8",
+      "razon_social": "Supermen of America suc. Chile",
       "observacion": null,
-      "id_operacion": 1,
-      "moneda": "CLP",
-      "id_categoria": 5,
-      "nombre_categoria": "Elementos de Protección Personal",
+      "id_operacion": 2,
+      "id_moneda": 0,
+      "nombre_moneda": "CLP",
+      "id_categoria": 15,
+      "nombre_categoria": "Trajes",
       "id_tipo_transaccion": 1,
-      "unidad_control": "AVG",
+      "id_unidad_control": 30,
+      "unidad_control": "Vestimenta",
       "tipo_unidad_control": true,
       "id_unidad_negocio": 1,
       "id_area": 0,
-      "id_unidad_control": 30,
-      "id_status": 2,
-      "id_dte": 21231,
-      "correlativo_oc": "C-12345-15",
-      "id_status_oc": 4,
+      "id_status": 3,
+      "id_dte": 123144,
+      "id_oc": 65477,
+      "correlativo_oc": "C-4535-21",
+      "id_status_oc": 7,
       "id_empresa": 1,
-      "empresa_nombre": "Stark Industries",
+      "empresa_nombre": "Sastres DC",
       "tipo_venta": "Afecta",
       "id_tipo_compra": 1,
       "anticipo": false,
       "es_factura_cedida": false,
       "id_tercero_cesion": 0,
-      "cod_custom": "SM-765",
-      "detalles":{
+      "cod_custom": null,
+      "detalles": {
         "count": 1,
-        "data":[
+        "data": [
           {
             "NroLinDet": "1",
-            "CdgItem":{
-              "TpoCodigo": "INT1",
-              "VlrCodigo": "123456789"
-            },
-            "NmbItem": "Escudo vibranium diseño estrella",
-            "QtyItem": "2.00",
-            "UnmdItem": "Unidad",
-            "PrcItem": "1390",
-            "MontoItem": "50000"
+            "IndExe": "1",
+            "NmbItem": "TRJ",
+            "DscItem": "Traje anti kriptonita",
+            "QtyItem": "1.0",
+            "PrcItem": "6400.0",
+            "MontoItem": "6400"
           }
         ]
       }
@@ -107,7 +104,152 @@ curl "https://api.gael.cloud/v2/documentos/lista?id_empresa=1&fech_emit_desde=01
 <aside class="api-endpoint">
     <div class="endpoint-data">
         <i class="label label-get">GET</i>
-        <h6>https://api.gael.cloud/v2/documentos/lista</h6>
+        <h6>https://api.gael.cloud/v2/documentos/compra/lista</h6>
+    </div>
+</aside>
+
+### Parámetros
+
+Parámetro | Requerido | Tipo | Formato | Descripción | Default
+--------- | ------- | ----------- | ----------- | ----------- | ----------- 
+<b>id_empresa</b> | Opcional | `int` |  | *Id de la empresa* | `null`
+<b>id_tipo_transaccion</b> | Opcional | `int` |  | *Id tipo transacción* | `null`
+<b>estado_id_desde</b> | Opcional | `int` | `0` a `9` | *Id de estado desde* | `0`
+<b>estado_id_hasta</b> | Opcional | `int` | `0` a `9` | *Id de estado hasta* | `0`
+<b>fech_emit_desde</b> | Opcional | `date` | `DD-MM-YYYY` | *Fecha emisión de documento, desde* | `null`
+<b>fech_emit_hasta</b> | Opcional | `date` | `DD-MM-YYYY` | *Fecha emisión de documento, hasta* | `null`
+<b>id_area</b> | Opcional | `int` |  | *Id del área* | `0`
+<b>id_unidad_negocio</b> | Opcional | `int` |  | *Id de la unidad de negocio* | `0`
+<b>id_unidad_control</b> | Opcional | `int` |  | *Id de la unidad de control* | `0`
+<b>id_categoria</b> | Opcional | `int` |  | *Id de la categoría* | `0`
+<b>id_operacion</b> | Opcional | `int` |  | *Id de la operación* | `0`
+<b>id_tercero</b> | Opcional | `int` |  | *Id del tercero* | `0`
+<b>con_detalle</b> | Opcional | `bool` |  | *Indica si se muestran los detalles del documento* | `false`
+
+## Lista de documentos de venta
+
+Entrega una lista de documentos de venta, con o sin listado de movimientos, según parámetros de entrada
+
+<aside class="notice">
+    Este endpoint entrega información relacionada a <b>documentos de venta</b>, con o sin detalle de movimientos por documento.
+</aside>
+
+> Obtener la lista de documentos, <b>con</b> listado de movimientos, para la empresa con id = 1 y fechas desde 01-02-2021, hasta 02-02-2021
+
+```python
+#TO-DO
+```
+
+```shell
+#El siguiente ejemplo retorna la lista de documentos según los filtros indicados
+curl "https://api.gael.cloud/v2/documentos/venta/lista?id_empresa=1&fech_emit_desde=01-02-2021&fech_emit_hasta=02-02-2021&con_detalle=true" \
+  -H "ApiKey: XXXXXXXXXXXXXXXXXXXXXXXXXXXXX" \
+  -X GET
+```  
+
+```javascript
+//TO-DO
+```
+
+> El ejemplo anterior retorna el siguiente JSON:
+
+```json
+{
+  "count": 1,
+  "data": [
+    {
+      "id": 646,
+      "numero_documento": 34532,
+      "fecha_documento": "2021-02-02T00:00:00.000Z",
+      "fecha_vencimiento": null,
+      "total_afecto": 3302344,
+      "total_exento": 0,
+      "total_iva": 627445,
+      "total_final": 3929789,
+      "tasa_iva": 19,
+      "anticipo": false,
+      "descuento_documento": 0,
+      "descuento_documento_porcent": 0,
+      "es_documento_parcial": false,
+      "id_tipo_doc": 653,
+      "emitido_ok": true,
+      "id_emitido_por": 5,
+      "nombre_emitido_por": "Elmer Figueroa",
+      "fecha_emision": "2021-02-02T11:09:08.837Z",
+      "es_moneda_extranjera": false,
+      "nombre_documento": "Factura Electrónica",
+      "id_periodo_contable": 34,
+      "periodo_contable": "Feb-21",
+      "id_tercero": 233,
+      "rut_tercero": "76100200-K",
+      "razon_social": "Torero S A",
+      "tercero": false,
+      "observacion": null,
+      "id_operacion": 12314,
+      "id_moneda": 1,
+      "nombre_moneda": "CLP",
+      "descripcion_moneda": "Peso Chileno",
+      "id_nv": 6436,
+      "id_status_nv": 7,
+      "id_categoria": 76,
+      "nombre_categoria": "Venta Cliente",
+      "id_tipo_transaccion": 34,
+      "id_unidad_control": 768,
+      "tipo_unidad_control": true,
+      "id_unidad_negocio": 81,
+      "id_area": 0,
+      "id_status": 3,
+      "correlativo_nv": "V-0098-13",
+      "recibido_ok": false,
+      "id_recibido_por": 2,
+      "fecha_recepcion": "2021-02-02T11:09:08.837Z",
+      "id_empresa": 1,
+      "empresa_nombre": "ONU",
+      "id_comprobante_contable": 1231,
+      "id_dte": 887,
+      "codigo_referencia": null,
+      "id_dte_referencia1": 24266,
+      "dte_referencia1": "87345379977",
+      "fecha_dte_referencia1": "2021-02-02T00:00:00.000Z",
+      "razon_dte_referencia1": "ORDEN DE COMPRA CLIENTE",
+      "id_dte_referencia2": null,
+      "dte_referencia2": null,
+      "fecha_dte_referencia2": "2021-02-02T00:00:00.000Z",
+      "razon_dte_referencia2": null,
+      "id_dte_referencia3": null,
+      "dte_referencia3": null,
+      "fecha_dte_referencia3": "2021-02-02T00:00:00.000Z",
+      "razon_dte_referencia3": null,
+      "acteco": 429000,
+      "tipo_despacho": null,
+      "cedido": false,
+      "cedido_a_nombre": null,
+      "cedido_a_rut": null,
+      "id_tipo_prod_vta": 0,
+      "detalles": {
+        "count": 1,
+        "data": [
+          {
+            "NroLinDet": "1",
+            "NmbItem": "Rosas y motos",
+            "DscItem": "Rosas frescas y motos choperas para grabar vídeo clip musical",
+            "QtyItem": "1.00",
+            "PrcItem": "3302344.00",
+            "MontoItem": "3302344"
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+### HTTPS Request
+
+<aside class="api-endpoint">
+    <div class="endpoint-data">
+        <i class="label label-get">GET</i>
+        <h6>https://api.gael.cloud/v2/documentos/venta/lista</h6>
     </div>
 </aside>
 
