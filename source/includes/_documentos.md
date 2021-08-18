@@ -37,7 +37,7 @@ curl "https://api.gael.cloud/v2/documentos/compra/lista?id_empresa=1&fech_emit_d
       "fecha_emision": "2021-05-02T00:00:00.000Z",
       "fecha_vencimiento": null,
       "total_afecto": 0,
-      "total_exwento": 6400,
+      "total_exento": 6400,
       "total_iva": 0,
       "total_final": 6400,
       "tasa_iva": 19,
@@ -114,10 +114,10 @@ Parámetro | Requerido | Tipo | Formato | Descripción | Default
 --------- | ------- | ----------- | ----------- | ----------- | ----------- 
 <b>id_empresa</b> | Opcional | `int` |  | *Id de la empresa* | `null`
 <b>id_tipo_transaccion</b> | Opcional | `int` |  | *Id tipo transacción* | `null`
-<b>estado_id_desde</b> | Opcional | `int` | `0` a `9` | *Id de estado desde* | `0`
-<b>estado_id_hasta</b> | Opcional | `int` | `0` a `9` | *Id de estado hasta* | `0`
+<b>estado_id_desde</b> | Opcional | `int` | `0` a `6` | *Id de estado desde* | `0`
+<b>estado_id_hasta</b> | Opcional | `int` | `0` a `6` | *Id de estado hasta* | `0`
 <b>fech_emit_desde</b> | Opcional | `date` | `DD-MM-YYYY` | *Fecha emisión de documento, desde* | `null`
-<b>fech_emit_hasta</b> | Opcional | `date` | `DD-MM-YYYY` | *Fecha emisión de documento, hasta* | `null`
+<b>fech_emit_hasta</b> | Opcional | `date` | `DD-MM-YYYY` | *Fecha emisión de documento, hasta* | `hoy`
 <b>id_area</b> | Opcional | `int` |  | *Id del área* | `0`
 <b>id_unidad_negocio</b> | Opcional | `int` |  | *Id de la unidad de negocio* | `0`
 <b>id_unidad_control</b> | Opcional | `int` |  | *Id de la unidad de control* | `0`
@@ -259,10 +259,10 @@ Parámetro | Requerido | Tipo | Formato | Descripción | Default
 --------- | ------- | ----------- | ----------- | ----------- | ----------- 
 <b>id_empresa</b> | Opcional | `int` |  | *Id de la empresa* | `null`
 <b>id_tipo_transaccion</b> | Opcional | `int` |  | *Id tipo transacción* | `null`
-<b>estado_id_desde</b> | Opcional | `int` | `0` a `9` | *Id de estado desde* | `0`
-<b>estado_id_hasta</b> | Opcional | `int` | `0` a `9` | *Id de estado hasta* | `0`
+<b>estado_id_desde</b> | Opcional | `int` | `0` a `6` | *Id de estado desde* | `0`
+<b>estado_id_hasta</b> | Opcional | `int` | `0` a `6` | *Id de estado hasta* | `0`
 <b>fech_emit_desde</b> | Opcional | `date` | `DD-MM-YYYY` | *Fecha emisión de documento, desde* | `null`
-<b>fech_emit_hasta</b> | Opcional | `date` | `DD-MM-YYYY` | *Fecha emisión de documento, hasta* | `null`
+<b>fech_emit_hasta</b> | Opcional | `date` | `DD-MM-YYYY` | *Fecha emisión de documento, hasta* | `hoy`
 <b>id_area</b> | Opcional | `int` |  | *Id del área* | `0`
 <b>id_unidad_negocio</b> | Opcional | `int` |  | *Id de la unidad de negocio* | `0`
 <b>id_unidad_control</b> | Opcional | `int` |  | *Id de la unidad de control* | `0`
