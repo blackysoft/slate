@@ -76,18 +76,18 @@ curl "https://api.gael.cloud/v2/remuneraciones/reporte_masivo?periodo=2101&empre
 
 ```plaintext
 
- |-Proyecto A1
- | |-S-0001-21 Johnny Gioeli.pdf
- | |-S-0002-21 Bobby Jarzombek.pdf
- | |-S-0003-21 Doro Pesch.pdf
- | |-S-0004-21 George Lynch.pdf
- | |-S-0005-21 Alex Van Halen.pdf
+|-Proyecto A1
+ | |- Johnny Gioeli.pdf
+ | |- Jarzombek Bobby.pdf
+ | |- Pesch Doro.pdf
+ | |- Lynch George.pdf
+ | |- Van Halen Alex.pdf
  |-Proyecto A2
- | |-S-0006-21 Angela Gossow.pdf
- | |-S-0007-21 Jason Becker.pdf
+ | |- Gossow Angela.pdf
+ | |- Becker Jason.pdf
  |-Proyecto A3
- | |-S-0008-21 Russell Allen.pdf
- | |-S-0009-21 Jason Rullo.pdf
+ | |- Allen Russell.pdf
+ | |- Rullo Jason.pdf
 ```
 
 ### HTTPS Request
