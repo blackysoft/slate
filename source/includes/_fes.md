@@ -7,10 +7,10 @@ Firma electrónicamente un documento en formato PDF, recibido en formato `base64
 > Firmar documento para usuario con id = 17, para el tipo de documento "Liquidación de sueldo", en ambiente de pruebas:
 
 <aside class="notice">
-    Este endpoint deberá recibir <b>obligatoriamente</b>, id_usuario o id_empleado, uno a la vez, nunca juntos.
+    Este endpoint deberá recibir <b>obligatoriamente</b>, id_usuario o id_empleado, uno a la vez, <b>nunca juntos</b>.
 </aside>
 <aside class="notice">
-    El largo de los campos <b>documento</b> y <b>documento_firmado</b> dependerán del tamaño del archivo PDF enviado y recibido respectivamente, por lo que el largo del texto, tanto del request como del response, podría ser muy extenso.
+    El largo de los campos <b>documento</b> y <b>documento_firmado</b> dependerá del tamaño del archivo PDF enviado y recibido respectivamente, por lo que el largo del texto, tanto del request como del response, podría ser muy extenso.
 </aside>
 
 ```python
@@ -74,3 +74,4 @@ El parámetro **tipo_documento** admite los siguientes valores:
 * `tipo_documento=3` **Contrato de trabajo**
 * `tipo_documento=4` **Anexo de contrato de trabajo**
 * `tipo_documento=5` **Certificado de antigüedad laboral**
+
