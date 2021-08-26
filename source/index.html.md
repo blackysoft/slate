@@ -27,6 +27,7 @@ includes:
   - _documentos
   - _remuneraciones
   - _contabilidad
+  - _rrhh
   - _fes
 ---
 
