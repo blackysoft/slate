@@ -23,7 +23,7 @@ curl -i -X POST \
    -H "Content-Type:application/json" \
    -d \
     '{
-      "id_empleado": "1",
+      "id_empleado": "17",
       "tipo_documento": "1",
       "documento": "JVBERi0xLjcKCjQgMCBvYmoKPDwKL0JpdHNQZXJDb21wb25lbnQg..........R4cmVmCjk0MzIwCiUlRU9GCg==",
       "sandbox": "true"
@@ -52,7 +52,7 @@ curl -i -X POST \
 
 <aside class="api-endpoint">
     <div class="endpoint-data">
-        <i class="label label-get">POST</i>
+        <i class="label label-post">POST</i>
         <h6>https://api.gael.cloud/v2/fes/firma_documento</h6>
     </div>
 </aside>
@@ -61,16 +61,16 @@ curl -i -X POST \
 
 Parámetro | Requerido | Tipo | Descripción | Default
 --------- | ------- | ----------- | ----------- | ----------- 
-<b>id_usuario</b> | Opcional* | `int` | *Id del usuario a consultar. No se envía junto a id_empleado.* | `null`
-<b>id_empleado</b> | Opcional* | `int` | *Id del empleado a consultar. No se envía junto a id_usuario.* | `null`
+<b>id_usuario</b> | Opcional* | `int` | *Id del usuario firmante. No se envía junto a id_empleado.* | `null`
+<b>id_empleado</b> | Opcional* | `int` | *Id del empleado firmante. No se envía junto a id_usuario.* | `null`
 <b>tipo_documento</b> | Obligatorio | `int` | *Tipo de documento a firmar*| `null`
 <b>documento</b> | Obligatorio | `string` | Cadena de carateres en `base64`.Documento a firmar, en PDF. |`null`
 <b>sandbox</b> | Opcional | `bool` | *Indica si el request se realizará a un ambiente productivo o de prueba* | `false`
 
 El parámetro **tipo_documento** admite los siguientes valores:
 
-* `tipo_documento=1` **Liquidaciones de sueldo**
-* `tipo_documento=2` **Certificados de vacaciones**
+* `tipo_documento=1` **Liquidación de sueldo**
+* `tipo_documento=2` **Certificado de vacaciones**
 * `tipo_documento=3` **Contrato de trabajo**
 * `tipo_documento=4` **Anexo de contrato de trabajo**
 * `tipo_documento=5` **Certificado de antigüedad laboral**
