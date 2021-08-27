@@ -40,7 +40,7 @@ curl "https://api.gael.cloud/v2/rrhh/vacaciones_comprobante?id=26&formato=html" 
 
 Parámetro | Requerido | Tipo | Descripción | Default
 --------- | ------- | ----------- | ----------- | ----------- 
-<b>id</b> | Obligatorio | `int` | *Id de la solicitud de vacaciones * | `null`
+<b>id</b> | Obligatorio | `int` | *Id de la solicitud de vacaciones* | `null`
 <b>formato</b> | Obligatorio | `string` | `pdf` `html` | *Formato del comprobante* | `null`
 
 ## Certificado de antigüedad laboral
@@ -83,5 +83,5 @@ curl "https://api.gael.cloud/v2/rrhh/certificado_laboral?tercero_id=43&formato=h
 
 Parámetro | Requerido | Tipo | Descripción | Default
 --------- | ------- | ----------- | ----------- | ----------- 
-<b>tercero_id</b> | Obligatorio | `int` | *Id del tercero * | `null`
+<b>tercero_id</b> | Obligatorio | `int` | *Id del tercero* | `null`
 <b>formato</b> | Obligatorio | `string` | `pdf` `html` | *Formato del comprobante* | `null`
