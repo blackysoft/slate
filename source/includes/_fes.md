@@ -23,7 +23,7 @@ curl -i -X POST \
    -H "Content-Type:application/json" \
    -d \
     '{
-      "id_empleado": "17",
+      "id_usuario": "17",
       "tipo_documento": "1",
       "documento": "JVBERi0xLjcKCjQgMCBvYmoKPDwKL0JpdHNQZXJDb21wb25lbnQg..........R4cmVmCjk0MzIwCiUlRU9GCg==",
       "sandbox": "true"
