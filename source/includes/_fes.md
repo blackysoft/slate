@@ -39,6 +39,7 @@ curl -i -X POST \
 
 ```json
 {
+  "FESId": 1,
   "cantidad_firmas": 1,
   "mensaje": "Documento firmado exitosamente",
   "codigo_paquete_fes": "AXC5154",
@@ -61,6 +62,7 @@ curl -i -X POST \
 
 Parámetro | Requerido | Tipo | Descripción | Default
 --------- | ------- | ----------- | ----------- | ----------- 
+<b>id_empresa</b> | Obligatorio | `int` | *Id de la empresa* | `null`
 <b>id_usuario</b> | Opcional* | `int` | *Id del usuario firmante. No se envía junto a id_empleado.* | `null`
 <b>id_empleado</b> | Opcional* | `int` | *Id del empleado firmante. No se envía junto a id_usuario.* | `null`
 <b>tipo_documento</b> | Obligatorio | `int` | *Tipo de documento a firmar*| `null`
