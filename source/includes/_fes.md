@@ -4,13 +4,10 @@
 
 Firma electrónicamente un documento en formato PDF, recibido en formato `base64`.
 
-> Firmar documento para usuario con id = 17, para el tipo de documento "Liquidación de sueldo", en ambiente de pruebas:
+> Firmar documento con id = 1453, en ambiente de pruebas:
 
 <aside class="notice">
-    Este endpoint deberá recibir <b>obligatoriamente</b>, id_usuario o id_empleado, uno a la vez, <b>nunca juntos</b>.
-</aside>
-<aside class="notice">
-    El largo de los campos <b>documento</b> y <b>documento_firmado</b> dependerá del tamaño del archivo PDF enviado y recibido respectivamente, por lo que el largo del texto, tanto del request como del response, podría ser muy extenso.
+    El largo de los campos <b>documento</b> (request) y <b>documento_firmado</b> (response) dependerá del tamaño del archivo PDF enviado y recibido respectivamente, por lo que el largo del texto, tanto del request como del response, podría ser muy extenso.
 </aside>
 
 ```python
@@ -23,10 +20,10 @@ curl -i -X POST \
    -H "Content-Type:application/json" \
    -d \
     '{
-      "id_usuario": "17",
-      "tipo_documento": "1",
-      "documento": "JVBERi0xLjcKCjQgMCBvYmoKPDwKL0JpdHNQZXJDb21wb25lbnQg..........R4cmVmCjk0MzIwCiUlRU9GCg==",
-      "sandbox": "true"
+      "id_doc_firma": "1453",
+      "id_status": "3",
+      "sandbox": "true",
+      "documento": "JVBERi0xLjcKKCjQgMCBvYmoKPDwKL0JpdHNQZXJD........ydHhyZWYKMTc1NzQ0CiUlRU9GCg=="
     }' \
  'https://api.gael.cloud/v2/fes/firma_documento'
 ```
@@ -39,7 +36,6 @@ curl -i -X POST \
 
 ```json
 {
-  "FESId": 1,
   "cantidad_firmas": 1,
   "mensaje": "Documento firmado exitosamente",
   "codigo_paquete_fes": "AXC5154",
@@ -62,18 +58,14 @@ curl -i -X POST \
 
 Parámetro | Requerido | Tipo | Descripción | Default
 --------- | ------- | ----------- | ----------- | ----------- 
-<b>id_empresa</b> | Obligatorio | `int` | *Id de la empresa* | `null`
-<b>id_usuario</b> | Opcional* | `int` | *Id del usuario firmante. No se envía junto a id_empleado.* | `null`
-<b>id_empleado</b> | Opcional* | `int` | *Id del empleado firmante. No se envía junto a id_usuario.* | `null`
-<b>tipo_documento</b> | Obligatorio | `int` | *Tipo de documento a firmar*| `null`
-<b>documento</b> | Obligatorio | `string` | Cadena de carateres en `base64`.Documento a firmar, en PDF. |`null`
+<b>id_doc_firma</b> | Obligatorio | `int` | *Id del documento a firmar* | `null`
+<b>id_status</b> | Obligatorio | `int` | *Id del estado de la firma del documento*| `null`
 <b>sandbox</b> | Opcional | `bool` | *Indica si el request se realizará a un ambiente productivo o de prueba* | `false`
+<b>documento</b> | Obligatorio | `string` | Cadena de carateres en `base64`.Documento a firmar, en PDF. |`null`
 
-El parámetro **tipo_documento** admite los siguientes valores:
+El parámetro **id_status** admite los siguientes valores:
 
-* `tipo_documento=1` **Liquidación de sueldo**
-* `tipo_documento=2` **Certificado de vacaciones**
-* `tipo_documento=3` **Contrato de trabajo**
-* `tipo_documento=4` **Anexo de contrato de trabajo**
-* `tipo_documento=5` **Certificado de antigüedad laboral**
+* `id_status=1` **Pendiente de firma**
+* `id_status=2` **Parcialmente firmado**
+* `id_status=3` **Firmado**
 
