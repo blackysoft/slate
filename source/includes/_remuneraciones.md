@@ -139,6 +139,7 @@ curl "https://api.gael.cloud/v2/remuneraciones/detalle?periodo=0221&empresa_id=1
   "count": 1,
   "data":[
     {
+      "OCID": 12305,
       "correlativo": "S-0069-21",
       "per_cont": "Feb-21",
       "empresa_nombre": "Stark Industries",
