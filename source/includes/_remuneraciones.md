@@ -144,7 +144,7 @@ curl "https://api.gael.cloud/v2/remuneraciones/detalle?periodo=0221&empresa_id=1
       "empresa_nombre": "Stark Industries",
       "empresa_rut": "76845691-0",
       "trabajador_nombre": "James Rhodes",
-      "trabajador_cargo": "Falcon",
+      "trabajador_cargo": "War Machine",
       "trabajador_rut": "13866125-5",
       "trabajador_trab_desde": "2001-07-13T00:00:00.000Z",
       "trabajador_contrato": "Indefinido",
