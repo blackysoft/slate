@@ -1,0 +1,2 @@
+docker run -d --rm --name slate -p 4567:4567 -v $(pwd)/build:/srv/slate/build -v $(pwd)/source:/srv/slate/source slatedocs/slate serve
+docker exec -it slate /bin/bash -c "bundle exec middleman build --clean"

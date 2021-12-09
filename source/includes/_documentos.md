@@ -449,14 +449,24 @@ curl "https://api.gael.cloud/v2/documentos/reporte?doc_id=6484&is_doc_venta=fals
 
 Parámetro | Requerido | Tipo | Formato | Descripción | Default
 --------- | ------- | ----------- | ----------- | ----------- | ----------- 
-<b>doc_id</b> | Obligatorio | `int` |  | *Id del documento a consultar* | `null`
+<b>doc_id</b> | Condicional | `int` |  | *Id del documento a consultar* | `null`
+<b>posvta_id</b> | Condicional | `int` |  | *Id de la venta a consultar* | `null`
 <b>is_doc_venta</b> | Obligatorio | `bool` |  | *Documento es de compra o de venta* | `null`
 <b>formato</b> | Obligatorio | `string` | `pdf` `html` `json` `xml` | *Formato del reporte* | `null`
 <b>cedible</b> | Opcional | `int` | `0` `1` `2` | *Copia cedible o no* | `0`
-<b>folio</b> | Obligatorio | `int` |  | *Número de Folio del DTE* |
-<b>tipo_doc</b> | Obligatorio | `int` |  | *Tipo de DTE a consultar* |
-<b>id_empresa</b> | Obligatorio | `int` |  | *Id de la Empresa Emisor* |
-<b>tipo_papel</b> | Obligatorio | `int` | `0` `1` | *Formato Papel para el reporte* | `0`
+<b>folio</b> | Condicional | `int` |  | *Número de Folio del DTE* |
+<b>tipo_doc</b> | Condicional | `int` |  | *Tipo de DTE a consultar* |
+<b>id_empresa</b> | Condicional | `int` |  | *Id de la empresa emisora* |
+<b>tipo_papel</b> | Opcional | `int` | `0` `1` | *Formato Papel para el reporte* | `0`
+
+
+Existen **3** formas diferentes de consultar este endpoint. Para identificar el DTE, puedes hacer el request:
+
+* Enviando el parámetro `doc_id` ó
+* Enviando el parámetro `posvta_id` ó
+* Enviando los parámetros  `folio` y `tipo_doc` y `id_empresa`
+
+incluyendo además los parámetros **obligatorios**
 
 <aside class="notice">
     El parámetro <b>cedible</b> sólo tiene efecto cuando el parámetro <b>formato</b> tiene valor <i>pdf</i> o <i>html</i>
@@ -476,6 +486,7 @@ El parámetro **tipo_papel** admite los valores `0` `1`. Dichos valores configur
 
 * `tipo_papel=0` Reporte de DTE en formato **papel oficio/carta**
 * `tipo_papel=1` Reporte de DTE en formato **papel continuo**
+
 
 ## Lista BHE
 
