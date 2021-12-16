@@ -373,7 +373,7 @@ curl -X GET --header 'Accept: application/json' \
 
 Información sobre impuesto único de 2da categoría.
 
-La información sobre impuesto único se actualiza una vez al mes **(día 20)**, según la web del SII.
+La información sobre impuesto único se actualiza una vez al mes **(día 14)**, según la web del SII.
 
 <aside class="notice">
 El parámetro <i>periodo</i> tiene el formato MES/AÑO 
