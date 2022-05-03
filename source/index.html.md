@@ -22,6 +22,7 @@ includes:
   - _ucontrol
   - _categorias
   - _comegr
+  - _venting
   - _fondrend
   - _presupuestos
   - _documentos
