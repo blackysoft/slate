@@ -290,14 +290,11 @@ curl -X GET --header 'Accept: application/json' \
 ```json
 [
   {
-    "Fecha": "2020/10/01 16:30:55",
-    "Latitud": "-21.386",
-    "Longitud": "-69.830",
-    "Profundidad": "44.0",
-    "Magnitud": "3.1 Ml",
-    "Agencia": "GUC",
-    "RefGeografica": "43 km al NO de Quillagua",
-    "FechaUpdate": "01/10/2020 17:30:00"
+    "Fecha": "2022-07-18 18:35:54",
+    "Profundidad": "121",
+    "Magnitud": "2.6",
+    "RefGeografica": "43 km al O de Ollagüe",
+    "FechaUpdate": "2022-07-18T23:10:00.830Z"
   },
   .......
 ]
@@ -316,7 +313,7 @@ curl -X GET --header 'Accept: application/json' \
 
 Información previsional.
 
-La información previsional se actualiza una vez al mes **(día 20)**, según la web de PREVIRED.
+La información previsional se actualiza una vez al día, según la web de PREVIRED.
 
 <aside class="notice">
 El parámetro <i>periodo</i> tiene el formato MES/AÑO 
