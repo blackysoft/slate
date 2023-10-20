@@ -453,6 +453,11 @@
                   <li>
                     <a href="#reporte-dte" class="toc-h2 toc-link" data-title="Reporte DTE">Reporte DTE</a>
                   </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#sii" class="toc-h1 toc-link" data-title="SII">SII</a>
+              <ul class="toc-list-h2">
                   <li>
                     <a href="#lista-bhe" class="toc-h2 toc-link" data-title="Lista BHE">Lista BHE</a>
                   </li>
@@ -3325,11 +3330,11 @@ curl <span class="s2">"https://api.gael.cloud/v2/documentos/reporte?doc_id=6484&
 <li><code>tipo_papel=0</code> Reporte de DTE en formato <strong>papel oficio/carta</strong></li>
 <li><code>tipo_papel=1</code> Reporte de DTE en formato <strong>papel continuo</strong></li>
 </ul>
-<h2 id='lista-bhe'>Lista BHE</h2>
+<h1 id='sii'>SII</h1><h2 id='lista-bhe'>Lista BHE</h2>
 <p>Entrega lista de boletas de honorarios electrónicas recibidas en el SII</p>
 
 <aside class="notice">
-    Para poder utilizar este endpoint, es necesario ingresar la clave del SII de la empresa en GAEL
+    Para poder utilizar este endpoint, es necesario ingresar la clave del SII de la empresa en Gael Cloud
 </aside>
 
 <blockquote>
@@ -3337,7 +3342,7 @@ curl <span class="s2">"https://api.gael.cloud/v2/documentos/reporte?doc_id=6484&
 </blockquote>
 <div class="highlight"><pre class="highlight python tab-python"><code><span class="c1">#TO-DO
 </span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c">#El siguiente ejemplo retorna la lista de BHE recibidas</span>
-curl <span class="s2">"https://api.gael.cloud/v2/documentos/bhe/lista?empresa_id=1&amp;periodo=2003"</span> <span class="se">\</span>
+curl <span class="s2">"https://api.gael.cloud/v2/integrations/sii/bhe_resumen?empresa_id=1&amp;periodo=0320"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"ApiKey: xxxxxxxxxxxxxxxx"</span> <span class="se">\</span>
   <span class="nt">-X</span> GET
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">//TO-DO</span>
@@ -3352,6 +3357,7 @@ curl <span class="s2">"https://api.gael.cloud/v2/documentos/bhe/lista?empresa_id
       </span><span class="nl">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"44"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"estado"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vigente"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"estado_cod"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"estado_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="nl">"fecha"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-30T03:00:00.000Z"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"rut_emisor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11111111-1"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"nombre_emisor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RICHIE SAMBORA"</span><span class="p">,</span><span class="w">
@@ -3365,6 +3371,7 @@ curl <span class="s2">"https://api.gael.cloud/v2/documentos/bhe/lista?empresa_id
       </span><span class="nl">"numero"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"estado"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vigente"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"estado_cod"</span><span class="p">:</span><span class="w"> </span><span class="s2">"N"</span><span class="p">,</span><span class="w">
+      </span><span class="nl">"estado_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
       </span><span class="nl">"fecha"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-03-31T03:00:00.000Z"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"rut_emisor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"55555555-5"</span><span class="p">,</span><span class="w">
       </span><span class="nl">"nombre_emisor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NUNO BETTENCOURT"</span><span class="p">,</span><span class="w">
@@ -3382,14 +3389,14 @@ curl <span class="s2">"https://api.gael.cloud/v2/documentos/bhe/lista?empresa_id
     </span><span class="nl">"liquido"</span><span class="p">:</span><span class="w"> </span><span class="mi">649167</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div><h3 id='https-request-4'>HTTPS Request</h3>
+</span></code></pre></div><h3 id='https-request'>HTTPS Request</h3>
 <aside class="api-endpoint">
     <div class="endpoint-data">
         <i class="label label-get">GET</i>
-        <h6>https://api.gael.cloud/v2/documentos/bhe/lista</h6>
+        <h6>https://api.gael.cloud/v2/integrations/sii/bhe_resumen</h6>
     </div>
 </aside>
-<h3 id='parametros-4'>Parámetros</h3>
+<h3 id='parametros'>Parámetros</h3>
 <table><thead>
 <tr>
 <th>Parámetro</th>
@@ -3412,36 +3419,47 @@ curl <span class="s2">"https://api.gael.cloud/v2/documentos/bhe/lista?empresa_id
 <td><b>periodo</b></td>
 <td>Obligatorio</td>
 <td><code>string</code></td>
-<td><code>YYMM</code></td>
+<td><code>MMYY</code></td>
 <td><em>Período a consultar</em></td>
 <td><code>null</code></td>
 </tr>
 </tbody></table>
 <h2 id='reporte-bhe'>Reporte BHE</h2>
-<p>Entrega el reporte en PDF de la boleta de honorarios electrónica recibida en el SII</p>
+<p>Entrega el reporte en PDF <em>(base64)</em> de la boleta de honorarios electrónica recibida en el SII</p>
 
 <aside class="notice">
-    Para poder utilizar este endpoint, es necesario ingresar la clave del SII de la empresa en GAEL
+    Para poder utilizar este endpoint, es necesario ingresar la clave del SII de la empresa en Gael Cloud
 </aside>
 
 <blockquote>
 <p>Obtener el reporte de la BHE con el código de barras 1111111100044F6C75GA</p>
 </blockquote>
 <div class="highlight"><pre class="highlight python tab-python"><code><span class="c1">#TO-DO
-</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c">#El siguiente ejemplo retorna la BHE en formato PDF</span>
-curl <span class="s2">"https://api.gael.cloud/v2/documentos/bhe/reporte?empresa_id=1&amp;codigo=1111111100044F6C75GA"</span> <span class="se">\</span>
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c">#El siguiente ejemplo retorna la BHE en formato PDF (base64)</span>
+curl <span class="s2">"https://api.gael.cloud/v2/integrations/sii/bhe_reporte?empresa_id=1&amp;codigo=1111111100044F6C75GA"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"ApiKey: xxxxxxxxxxxxxxxx"</span> <span class="se">\</span>
-  <span class="nt">-X</span> GET <span class="se">\</span>
-  <span class="nt">--output</span> bhe.pdf
+  <span class="nt">-X</span> GET
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">//TO-DO</span>
-</code></pre></div><h3 id='https-request-5'>HTTPS Request</h3>
+</code></pre></div>
+<blockquote>
+<p>El ejemplo anterior retorna el siguiente JSON:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"count"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"data"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nl">"pdf"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JVBERi0xLjMKxOGE4MGJkMzc2YmE..."</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='https-request-2'>HTTPS Request</h3>
 <aside class="api-endpoint">
     <div class="endpoint-data">
         <i class="label label-get">GET</i>
-        <h6>https://api.gael.cloud/v2/documentos/bhe/reporte</h6>
+        <h6>https://api.gael.cloud/v2/integrations/sii/bhe_reporte</h6>
     </div>
 </aside>
-<h3 id='parametros-5'>Parámetros</h3>
+<h3 id='parametros-2'>Parámetros</h3>
 <table><thead>
 <tr>
 <th>Parámetro</th>
