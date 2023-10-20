@@ -26,6 +26,7 @@ includes:
   - _fondrend
   - _presupuestos
   - _documentos
+  - _sii
   - _remuneraciones
   - _contabilidad
   - _rrhh
