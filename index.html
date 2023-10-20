@@ -317,6 +317,9 @@
             <a href="#publica" class="toc-h1 toc-link" data-title="Pública">Pública</a>
               <ul class="toc-list-h2">
                   <li>
+                    <a href="#rate-limiting" class="toc-h2 toc-link" data-title="⚠️ Rate Limiting">⚠️ Rate Limiting</a>
+                  </li>
+                  <li>
                     <a href="#todas-las-monedas" class="toc-h2 toc-link" data-title="💲 Todas las monedas">💲 Todas las monedas</a>
                   </li>
                   <li>
@@ -525,7 +528,7 @@
       <div class="dark-box"></div>
       <div class="content">
         <h1 id='introduccion'>Introducción</h1>
-<p>Bienvenido a la <strong>API de GAEL</strong> 👋 </p>
+<p>Bienvenido a la <strong>API de Gael Cloud</strong> 👋 </p>
 
 <p>Tenemos ejemplos en distintos lenguajes <em>(Shell, Python y JavaScript)</em>. Puedes revisar los códigos de ejemplo en el área oscura de la derecha y puedes cambiar el lenguaje de programación haciendo click en los tabs de la barra superior derecha.</p>
 
@@ -542,7 +545,7 @@
 En caso de detectar uso indebido de cualquiera de los endpoints públicos, procederemos a banear ips <b>sin previo aviso</b>👀
 </aside>
 
-<p>Para interactuar con cualquiera de los endpoints que no estén presentes en la sección <a href="#publica">Pública</a>, es necesario ser cliente activo de <a href="https://gael.cl">GAEL</a> y contar con una <strong>ApiKey</strong>. Para más información revisar la sección <a href="#autenticacion">Autenticación</a></p>
+<p>Para interactuar con cualquiera de los endpoints que no estén presentes en la sección <a href="#publica">Pública</a>, es necesario ser cliente activo de <a href="https://gael.cloud">Gael Cloud</a> y contar con una <strong>ApiKey</strong>. Para más información revisar la sección <a href="#autenticacion">Autenticación</a></p>
 
 <p>Si vas a utilizar nuestra API, es importante que <strong>tengas en consideración los siguientes puntos:</strong></p>
 
@@ -553,7 +556,32 @@ En caso de detectar uso indebido de cualquiera de los endpoints públicos, proce
 </ul>
 
 <p>La documentación de esta API fué creada utilizando <a href="https://github.com/slatedocs/slate">Slate</a>.</p>
-<h1 id='publica'>Pública</h1><h2 id='todas-las-monedas'>💲 Todas las monedas</h2>
+<h1 id='publica'>Pública</h1><h2 id='rate-limiting'>⚠️ Rate Limiting</h2>
+<aside class="warning">
+¡Ojo, con la cantidad de requests!
+</aside>
+
+<p>Los endpoints referentes a la a sección <a href="#publica">Pública</a> están protegidos con <em>rate limiting</em>. </p>
+
+<p>Esto significa que tu ip quedará <strong>baneada por una hora</strong> si es que realizas más de <strong>9 requests en un intervalo de 10 segundos.</strong></p>
+
+<p>Si tu IP queda baneada... a esperar nomás. La API retornará el código <strong>429</strong> y el JSON mostrado en el ejemplo</p>
+
+<aside class="info">
+Revisa tu código para limintar la cantidad de requests por segundo.
+</aside>
+
+<blockquote>
+<p>Si tu IP queda baneada por realizar demasiados requests seguidos, la api retornará el siguiente JSON:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"error"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rate_limiting_error"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"code"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Cantidad de requests excedido"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h2 id='todas-las-monedas'>💲 Todas las monedas</h2>
 <p>Obtener valores actuales de cambio nominal (CLP) respecto a diversas monedas extranjeras.</p>
 
 <p>Los valores de tipo de cambio se actualizan cada <strong>30 minutos</strong> desde la web del BANCO CENTRAL DE CHILE.</p>
@@ -912,12 +940,20 @@ Debes reemplazar <code>xxxxxxxxxxxxxxxx</code> por la <b>ApiKey</b> asociada a t
 <td>Unauthorized - Tu ApiKey no es válida o no la estás enviando correctamente según la sección <a href="#autenticacion">Autenticación</a></td>
 </tr>
 <tr>
+<td><b>403</b></td>
+<td>Forbidden - Baneo permanente por uso indebido de api</td>
+</tr>
+<tr>
 <td><b>404</b></td>
 <td>Not Found - El endpoint solicitado no existe</td>
 </tr>
 <tr>
 <td><b>422</b></td>
 <td>Unprocessable Entity - Existe un error de lógica (negocio)</td>
+</tr>
+<tr>
+<td><b>429</b></td>
+<td>Too Many Requests - IP baneada por demasiados <a href="#rate-limiting">requests seguidos</a></td>
 </tr>
 <tr>
 <td><b>500</b></td>
@@ -959,7 +995,7 @@ curl <span class="s2">"https://api.gael.cloud/v2/cuenta/login"</span> <span clas
 <tr>
 <td><strong>type</strong></td>
 <td><code>string</code></td>
-<td><em>Tipo de error</em> (<code>internal_error, auth_error, bad_request_error, logic_error, provider_error</code>)</td>
+<td><em>Tipo de error</em> (<code>internal_error, auth_error, bad_request_error, logic_error, provider_error, rate_limiting_error</code>)</td>
 </tr>
 <tr>
 <td><strong>code</strong></td>
