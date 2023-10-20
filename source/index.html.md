@@ -34,7 +34,7 @@ includes:
 
 # Introducción
 
-Bienvenido a la **API de GAEL** 👋 
+Bienvenido a la **API de Gael Cloud** 👋 
 
 Tenemos ejemplos en distintos lenguajes *(Shell, Python y JavaScript)*. Puedes revisar los códigos de ejemplo en el área oscura de la derecha y puedes cambiar el lenguaje de programación haciendo click en los tabs de la barra superior derecha.
 
@@ -49,7 +49,7 @@ Todos los endpoints de carácter público presentados en la sección [Pública](
 En caso de detectar uso indebido de cualquiera de los endpoints públicos, procederemos a banear ips <b>sin previo aviso</b>👀
 </aside>
 
-Para interactuar con cualquiera de los endpoints que no estén presentes en la sección [Pública](#publica), es necesario ser cliente activo de [GAEL](https://gael.cl) y contar con una **ApiKey**. Para más información revisar la sección [Autenticación](#autenticacion)
+Para interactuar con cualquiera de los endpoints que no estén presentes en la sección [Pública](#publica), es necesario ser cliente activo de [Gael Cloud](https://gael.cloud) y contar con una **ApiKey**. Para más información revisar la sección [Autenticación](#autenticacion)
 
 Si vas a utilizar nuestra API, es importante que **tengas en consideración los siguientes puntos:**
 
@@ -60,6 +60,34 @@ Si vas a utilizar nuestra API, es importante que **tengas en consideración los 
 La documentación de esta API fué creada utilizando [Slate](https://github.com/slatedocs/slate).
 
 # Pública
+
+## ⚠️ Rate Limiting
+
+<aside class="warning">
+¡Ojo, con la cantidad de requests!
+</aside>
+
+Los endpoints referentes a la a sección [Pública](#publica) están protegidos con *rate limiting*. 
+
+Esto significa que tu ip quedará **baneada por una hora** si es que realizas más de **9 requests en un intervalo de 10 segundos.**
+
+Si tu IP queda baneada... a esperar nomás. La API retornará el código **429** y el JSON mostrado en el ejemplo
+
+<aside class="info">
+Revisa tu código para limintar la cantidad de requests por segundo.
+</aside>
+
+> Si tu IP queda baneada por realizar demasiados requests seguidos, la api retornará el siguiente JSON:
+
+```json
+{
+  "error": {
+    "type": "rate_limiting_error",
+    "code": 0,
+    "message": "Cantidad de requests excedido"
+  }
+}
+```
 
 ## 💲 Todas las monedas
 
