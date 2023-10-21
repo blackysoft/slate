@@ -7,8 +7,10 @@ language_tabs: # must be one of https://github.com/rouge-ruby/rouge/wiki/List-of
   - javascript
 
 toc_footers:
-  - <a target="_blank" href='https://status.gael.cloud'>🚩 Estado Gael Cloud</a>
-  - <a target="_blank" href='https://gael.cloud'>🌎 Sitio Web Gael</a>
+  - <a target="_blank" href='https://status.gael.cloud'>🚩 Status Gael Cloud</a>
+  - <a target="_blank" href='https://gael.cloud'>🌎 Sitio Web Gael Cloud</a>
+  - <a target="_blank" href='https://blog.gael.cloud'>🗒️ Blog Gael Cloud</a>
+  - <a target="_blank" href='https://www.linkedin.com/company/gael'>🏛️ LinkedIn Gael Cloud</a>
   - <a href="mailto:soporte@gael.cloud">📧 Contacto</a>
 
 search: true
@@ -72,7 +74,7 @@ Los endpoints referentes a la a sección [Pública](#publica) están protegidos 
 
 Esto significa que tu ip quedará **baneada por una hora** si es que realizas más de **9 requests en un intervalo de 10 segundos.**
 
-Si tu IP queda baneada... a esperar nomás. La API retornará el código **429** y el JSON mostrado en el ejemplo
+Si tu IP queda baneada... a esperar no más. La API retornará el código **429** y el JSON mostrado en el ejemplo
 
 <aside class="info">
 Revisa tu código para limintar la cantidad de requests por segundo.
