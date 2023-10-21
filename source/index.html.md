@@ -77,7 +77,7 @@ Esto significa que tu ip quedará **baneada por una hora** si es que realizas m�
 Si tu IP queda baneada... a esperar no más. La API retornará el código **429** y el JSON mostrado en el ejemplo
 
 <aside class="info">
-Revisa tu código para limintar la cantidad de requests por segundo.
+Revisa tu código para limitar la cantidad de requests por segundo.
 </aside>
 
 > Si tu IP queda baneada por realizar demasiados requests seguidos, la api retornará el siguiente JSON:
