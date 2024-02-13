@@ -767,96 +767,98 @@ Puedes revisar los códigos de las estaciones meteorológicas utilizando el requ
 <h2 id='indicadores-previred'>👷‍♀️Indicadores Previred</h2>
 <p>Información previsional.</p>
 
-<p>La información previsional se actualiza una vez al día, según la web de PREVIRED.</p>
+<p>La información previsional se actualiza una vez al <strong>día</strong>, según la web de PREVIRED.</p>
 
 <aside class="notice">
 El parámetro <i>periodo</i> tiene el formato MES/AÑO 
 </aside>
 <div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.gael.cloud/general/public/previred/062020"</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.gael.cloud/general/public/previred/012024"</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-<span class="s1">'https://api.gael.cloud/general/public/previred/072022'</span>
+<span class="s1">'https://api.gael.cloud/general/public/previred/012024'</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">//TO-DO</span>
 </code></pre></div>
 <blockquote>
 <p>El ejemplo anterior retorna el siguiente JSON:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"PreviredID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1074</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"Fecha"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2022-07-24T21:46:02.947Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"PeriodoMY"</span><span class="p">:</span><span class="w"> </span><span class="s2">"072022"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"PeriodoYM"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2207"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"UFDescPeriodo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"al 31 de Julio 2022"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"UFValPeriodo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33417,26"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"UFDescPeridoAnt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"al 30 de Junio 2022"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"UFValPeriodoAnt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33086,83"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"UTMDesc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Julio 2022"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"UTMVal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"58248"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"UTAVal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"698976"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"RTIAfpUF"</span><span class="p">:</span><span class="w"> </span><span class="s2">"81,6"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"RTIIpsUF"</span><span class="p">:</span><span class="w"> </span><span class="s2">"60"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"RTISegCesUF"</span><span class="p">:</span><span class="w"> </span><span class="s2">"122,6"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"RTIAfpPesos"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2726848"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"RTIIpsPesos"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1985210"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"RTISegCesPesos"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4096956"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"RMITrabDepeInd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"380000"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"RMIMen18May65"</span><span class="p">:</span><span class="w"> </span><span class="s2">"283471"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"RMITrabCasaPart"</span><span class="p">:</span><span class="w"> </span><span class="s2">"380000"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"RMINoRemu"</span><span class="p">:</span><span class="w"> </span><span class="s2">"244944"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"APVTopeMensUF"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"APVTopeAnuUF"</span><span class="p">:</span><span class="w"> </span><span class="s2">"600"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"APVTopeMensPesos"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1670863"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"APVTopeAnuPesos"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20050356"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"DepConvenidoUF"</span><span class="p">:</span><span class="w"> </span><span class="s2">"900"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"DepConvenidoPesos"</span><span class="p">:</span><span class="w"> </span><span class="s2">"30075534"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFCCpiEmpleador"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2,4"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFCCpiTrabajador"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0,6"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFCCpfEmpleador"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3,0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFCCpfTrabajador"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFCCpi11Empleador"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0,8"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFCCpi11Trabajador"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFCTcpEmpleador"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3,0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFCTcpTrabajador"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFPCapitalTasaDep"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11,44"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFPCapitalTasaSIS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1,84"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFPCapitalTasaInd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13,28"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFPCuprumTasaDep"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11,44"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFPCuprumTasaSIS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1,84"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFPCuprumTasaInd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13,28"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFPHabitatTasaDep"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11,27"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFPHabitatTasaSIS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1,84"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFPHabitatTasaInd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13,11"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFPPlanVitalTasaDep"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11,16"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFPPlanVitalTasaSIS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1,84"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFPPlanVitalTasaInd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13,00"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFPProVidaTasaDep"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11,45"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFPProVidaTasaSIS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1,84"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFPProVidaTasaInd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13,29"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFPModeloTasaDep"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10,58"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFPModeloTasaSIS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1,84"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFPModeloTasaInd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12,42"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFPUnoTasaDep"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10,69"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFPUnoTasaSIS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1,84"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFPUnoTasaInd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12,53"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFamTramoAMonto"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15597"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFamTramoADesde"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFamTramoAHasta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"398443"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFamTramoBMonto"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9571"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFamTramoBDesde"</span><span class="p">:</span><span class="w"> </span><span class="s2">"398443"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFamTramoBHasta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"581968"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFamTramoCMonto"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3025"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFamTramoCDesde"</span><span class="p">:</span><span class="w"> </span><span class="s2">"581968"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFamTramoCHasta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"907672"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFamTramoDMonto"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFamTramoDDesde"</span><span class="p">:</span><span class="w"> </span><span class="s2">"907672"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"AFamTramoDHasta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9999999999"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"TrabPesadoCalif"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"TrabPesadoEmpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"TrabPesadoTrabaj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"TrabMenosPesadoCalif"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"TrabMenosPesadoEmpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"TrabMenosPesadoTrabaj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="w">
+    </span><span class="nl">"PreviredID"</span><span class="p">:</span><span class="w"> </span><span class="mi">8532</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Fecha"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-02-09T16:16:16.157Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"PeriodoMY"</span><span class="p">:</span><span class="w"> </span><span class="s2">"012024"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"PeriodoYM"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2401"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"UFDescPeriodo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"al 31 de Enero del 2024"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"UFValPeriodo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"36733,04"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"UFDescPeridoAnt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"al 31 de Diciembre del 2023"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"UFValPeriodoAnt"</span><span class="p">:</span><span class="w"> </span><span class="s2">"36789,36"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"UTMDesc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Enero 2024"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"UTMVal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"64666"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"UTAVal"</span><span class="p">:</span><span class="w"> </span><span class="s2">"775992"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"RTIAfpUF"</span><span class="p">:</span><span class="w"> </span><span class="s2">"84,3"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"RTIIpsUF"</span><span class="p">:</span><span class="w"> </span><span class="s2">"60"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"RTISegCesUF"</span><span class="p">:</span><span class="w"> </span><span class="s2">"126,6"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"RTIAfpPesos"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3096595"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"RTIIpsPesos"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2207362"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"RTISegCesPesos"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4650403"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"RMITrabDepeInd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"460000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"RMIMen18May65"</span><span class="p">:</span><span class="w"> </span><span class="s2">"343150"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"RMITrabCasaPart"</span><span class="p">:</span><span class="w"> </span><span class="s2">"460000"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"RMINoRemu"</span><span class="p">:</span><span class="w"> </span><span class="s2">"296511"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"APVTopeMensUF"</span><span class="p">:</span><span class="w"> </span><span class="s2">"50"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"APVTopeAnuUF"</span><span class="p">:</span><span class="w"> </span><span class="s2">"600"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"APVTopeMensPesos"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1836652"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"APVTopeAnuPesos"</span><span class="p">:</span><span class="w"> </span><span class="s2">"22039824"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"DepConvenidoUF"</span><span class="p">:</span><span class="w"> </span><span class="s2">"900"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"DepConvenidoPesos"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33059736"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFCCpiEmpleador"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2,4"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFCCpiTrabajador"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0,6"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFCCpfEmpleador"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3,0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFCCpfTrabajador"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFCCpi11Empleador"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0,8"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFCCpi11Trabajador"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFCTcpEmpleador"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3,0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFCTcpTrabajador"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFPCapitalTasaDep"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11,44"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFPCapitalTasaSIS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1,49"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFPCapitalTasaInd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12,93"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFPCuprumTasaDep"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11,44"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFPCuprumTasaSIS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1,49"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFPCuprumTasaInd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12,93"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFPHabitatTasaDep"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11,27"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFPHabitatTasaSIS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1,49"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFPHabitatTasaInd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12,76"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFPPlanVitalTasaDep"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11,16"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFPPlanVitalTasaSIS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1,49"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFPPlanVitalTasaInd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12,65"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFPProVidaTasaDep"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11,45"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFPProVidaTasaSIS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1,49"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFPProVidaTasaInd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12,94"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFPModeloTasaDep"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10,58"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFPModeloTasaSIS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1,49"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFPModeloTasaInd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12,07"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFPUnoTasaDep"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10,49"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFPUnoTasaSIS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1,49"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFPUnoTasaInd"</span><span class="p">:</span><span class="w"> </span><span class="s2">"11,98"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFamTramoAMonto"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20328"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFamTramoADesde"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFamTramoAHasta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"539328"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFamTramoBMonto"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12475"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFamTramoBDesde"</span><span class="p">:</span><span class="w"> </span><span class="s2">"539328"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFamTramoBHasta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"787746"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFamTramoCMonto"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3942"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFamTramoCDesde"</span><span class="p">:</span><span class="w"> </span><span class="s2">"787746"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFamTramoCHasta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1228614"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFamTramoDMonto"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFamTramoDDesde"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1228614"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"AFamTramoDHasta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9999999999"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TrabPesadoCalif"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TrabPesadoEmpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TrabPesadoTrabaj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TrabMenosPesadoCalif"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TrabMenosPesadoEmpl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TrabMenosPesadoTrabaj"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Dist7PorcCCAF"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3,1"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"Dist7PorcFonasa"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3,9"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='https-request-6'>HTTPS Request</h3>
 <aside class="api-endpoint">
@@ -868,36 +870,69 @@ El parámetro <i>periodo</i> tiene el formato MES/AÑO
 <h2 id='indicadores-impuesto-unico'>🏢Indicadores Impuesto Único</h2>
 <p>Información sobre impuesto único de 2da categoría.</p>
 
-<p>La información sobre impuesto único se actualiza una vez al mes <strong>(día 14)</strong>, según la web del SII.</p>
+<p>La información sobre impuesto único se actualiza una vez al <strong>día</strong>, según la web del SII.</p>
 
 <aside class="notice">
 El parámetro <i>periodo</i> tiene el formato MES/AÑO 
 </aside>
 <div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.gael.cloud/general/public/impunico/062020"</span><span class="p">)</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">"https://api.gael.cloud/general/public/impunico/022024"</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">response</span><span class="p">.</span><span class="n">text</span><span class="p">)</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="nt">-X</span> GET <span class="nt">--header</span> <span class="s1">'Accept: application/json'</span> <span class="se">\</span>
-<span class="s1">'https://api.gael.cloud/general/public/impunico/062020'</span>
+<span class="s1">'https://api.gael.cloud/general/public/impunico/022024'</span>
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">//TO-DO</span>
 </code></pre></div>
 <blockquote>
 <p>El ejemplo anterior retorna el siguiente JSON:</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"ImpUnicoID"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"FechaUpdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-06-20T20:00:03.000Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"PeriodoMY"</span><span class="p">:</span><span class="w"> </span><span class="s2">"062020"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"PeriodoYM"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2006"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"PeriodoNombre"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Junio 2020"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"FechaDesde"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-06-01T04:00:00.000Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"FechaHasta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2020-06-30T04:00:00.000Z"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"TR1Desde"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"TR1Hasta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"680022,00"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"TR1Factor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"TR1CReb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"TR1TIEfectiva"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
-  </span><span class="nl">"TR2Desde"</span><span class="p">:</span><span class="w"> </span><span class="s2">"680022,01"</span><span class="p">,</span><span class="w">
-  </span><span class="err">.......</span><span class="w">
+    </span><span class="nl">"ImpUnicoID"</span><span class="p">:</span><span class="w"> </span><span class="mi">1051</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"FechaUpdate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-02-13T13:36:51.470Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"PeriodoMY"</span><span class="p">:</span><span class="w"> </span><span class="s2">"022024"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"PeriodoYM"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2402"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"PeriodoNombre"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Febrero 2024"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"FechaDesde"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-02-01T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"FechaHasta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2024-02-29T00:00:00.000Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR1Desde"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR1Hasta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"868630,50"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR1Factor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR1CReb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR1TIEfectiva"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR2Desde"</span><span class="p">:</span><span class="w"> </span><span class="s2">"868630,51"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR2Hasta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1930290,00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR2Factor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0,04"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR2CReb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"34745,22"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR2TIEfectiva"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2,20"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR3Desde"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1930290,01"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR3Hasta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3217150,00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR3Factor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0,08"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR3CReb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"111956,82"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR3TIEfectiva"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4,52"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR4Desde"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3217150,01"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR4Hasta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4504010,00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR4Factor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0,135"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR4CReb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"288900,07"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR4TIEfectiva"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7,09"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR5Desde"</span><span class="p">:</span><span class="w"> </span><span class="s2">"4504010,01"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR5Hasta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5790870,00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR5Factor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0,23"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR5CReb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"716781,02"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR5TIEfectiva"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10,62"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR6Desde"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5790870,01"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR6Hasta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7721160,00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR6Factor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0,304"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR6CReb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1145305,40"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR6TIEfectiva"</span><span class="p">:</span><span class="w"> </span><span class="s2">"15,57"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR7Desde"</span><span class="p">:</span><span class="w"> </span><span class="s2">"7721160,01"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR7Hasta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19946330,00"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR7Factor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0,35"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR7CReb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1500478,76"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR7TIEfectiva"</span><span class="p">:</span><span class="w"> </span><span class="s2">"27,48"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR8Desde"</span><span class="p">:</span><span class="w"> </span><span class="s2">"19946330,01"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR8Hasta"</span><span class="p">:</span><span class="w"> </span><span class="s2">"99999999"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR8Factor"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0,4"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR8CReb"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2497795,26"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"TR8TIEfectiva"</span><span class="p">:</span><span class="w"> </span><span class="s2">"27,48"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div><h3 id='https-request-7'>HTTPS Request</h3>
 <aside class="api-endpoint">
