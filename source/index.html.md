@@ -344,7 +344,7 @@ curl -X GET --header 'Accept: application/json' \
 
 Información previsional.
 
-La información previsional se actualiza una vez al día, según la web de PREVIRED.
+La información previsional se actualiza una vez al **día**, según la web de PREVIRED.
 
 <aside class="notice">
 El parámetro <i>periodo</i> tiene el formato MES/AÑO 
@@ -352,13 +352,13 @@ El parámetro <i>periodo</i> tiene el formato MES/AÑO
 
 ```python
 import requests
-response = requests.get("https://api.gael.cloud/general/public/previred/062020")
+response = requests.get("https://api.gael.cloud/general/public/previred/012024")
 print(response.text)
 ```
 
 ```shell
 curl -X GET --header 'Accept: application/json' \
-'https://api.gael.cloud/general/public/previred/072022'
+'https://api.gael.cloud/general/public/previred/012024'
 ```
 
 ```javascript
@@ -369,80 +369,82 @@ curl -X GET --header 'Accept: application/json' \
 
 ```json
 {
-  "PreviredID": 1074,
-  "Fecha": "2022-07-24T21:46:02.947Z",
-  "PeriodoMY": "072022",
-  "PeriodoYM": "2207",
-  "UFDescPeriodo": "al 31 de Julio 2022",
-  "UFValPeriodo": "33417,26",
-  "UFDescPeridoAnt": "al 30 de Junio 2022",
-  "UFValPeriodoAnt": "33086,83",
-  "UTMDesc": "Julio 2022",
-  "UTMVal": "58248",
-  "UTAVal": "698976",
-  "RTIAfpUF": "81,6",
-  "RTIIpsUF": "60",
-  "RTISegCesUF": "122,6",
-  "RTIAfpPesos": "2726848",
-  "RTIIpsPesos": "1985210",
-  "RTISegCesPesos": "4096956",
-  "RMITrabDepeInd": "380000",
-  "RMIMen18May65": "283471",
-  "RMITrabCasaPart": "380000",
-  "RMINoRemu": "244944",
-  "APVTopeMensUF": "50",
-  "APVTopeAnuUF": "600",
-  "APVTopeMensPesos": "1670863",
-  "APVTopeAnuPesos": "20050356",
-  "DepConvenidoUF": "900",
-  "DepConvenidoPesos": "30075534",
-  "AFCCpiEmpleador": "2,4",
-  "AFCCpiTrabajador": "0,6",
-  "AFCCpfEmpleador": "3,0",
-  "AFCCpfTrabajador": "0",
-  "AFCCpi11Empleador": "0,8",
-  "AFCCpi11Trabajador": "0",
-  "AFCTcpEmpleador": "3,0",
-  "AFCTcpTrabajador": "0",
-  "AFPCapitalTasaDep": "11,44",
-  "AFPCapitalTasaSIS": "1,84",
-  "AFPCapitalTasaInd": "13,28",
-  "AFPCuprumTasaDep": "11,44",
-  "AFPCuprumTasaSIS": "1,84",
-  "AFPCuprumTasaInd": "13,28",
-  "AFPHabitatTasaDep": "11,27",
-  "AFPHabitatTasaSIS": "1,84",
-  "AFPHabitatTasaInd": "13,11",
-  "AFPPlanVitalTasaDep": "11,16",
-  "AFPPlanVitalTasaSIS": "1,84",
-  "AFPPlanVitalTasaInd": "13,00",
-  "AFPProVidaTasaDep": "11,45",
-  "AFPProVidaTasaSIS": "1,84",
-  "AFPProVidaTasaInd": "13,29",
-  "AFPModeloTasaDep": "10,58",
-  "AFPModeloTasaSIS": "1,84",
-  "AFPModeloTasaInd": "12,42",
-  "AFPUnoTasaDep": "10,69",
-  "AFPUnoTasaSIS": "1,84",
-  "AFPUnoTasaInd": "12,53",
-  "AFamTramoAMonto": "15597",
-  "AFamTramoADesde": "0",
-  "AFamTramoAHasta": "398443",
-  "AFamTramoBMonto": "9571",
-  "AFamTramoBDesde": "398443",
-  "AFamTramoBHasta": "581968",
-  "AFamTramoCMonto": "3025",
-  "AFamTramoCDesde": "581968",
-  "AFamTramoCHasta": "907672",
-  "AFamTramoDMonto": "0",
-  "AFamTramoDDesde": "907672",
-  "AFamTramoDHasta": "9999999999",
-  "TrabPesadoCalif": "4",
-  "TrabPesadoEmpl": "2",
-  "TrabPesadoTrabaj": "2",
-  "TrabMenosPesadoCalif": "2",
-  "TrabMenosPesadoEmpl": "1",
-  "TrabMenosPesadoTrabaj": "1"
+    "PreviredID": 8532,
+    "Fecha": "2024-02-09T16:16:16.157Z",
+    "PeriodoMY": "012024",
+    "PeriodoYM": "2401",
+    "UFDescPeriodo": "al 31 de Enero del 2024",
+    "UFValPeriodo": "36733,04",
+    "UFDescPeridoAnt": "al 31 de Diciembre del 2023",
+    "UFValPeriodoAnt": "36789,36",
+    "UTMDesc": "Enero 2024",
+    "UTMVal": "64666",
+    "UTAVal": "775992",
+    "RTIAfpUF": "84,3",
+    "RTIIpsUF": "60",
+    "RTISegCesUF": "126,6",
+    "RTIAfpPesos": "3096595",
+    "RTIIpsPesos": "2207362",
+    "RTISegCesPesos": "4650403",
+    "RMITrabDepeInd": "460000",
+    "RMIMen18May65": "343150",
+    "RMITrabCasaPart": "460000",
+    "RMINoRemu": "296511",
+    "APVTopeMensUF": "50",
+    "APVTopeAnuUF": "600",
+    "APVTopeMensPesos": "1836652",
+    "APVTopeAnuPesos": "22039824",
+    "DepConvenidoUF": "900",
+    "DepConvenidoPesos": "33059736",
+    "AFCCpiEmpleador": "2,4",
+    "AFCCpiTrabajador": "0,6",
+    "AFCCpfEmpleador": "3,0",
+    "AFCCpfTrabajador": "0",
+    "AFCCpi11Empleador": "0,8",
+    "AFCCpi11Trabajador": "0",
+    "AFCTcpEmpleador": "3,0",
+    "AFCTcpTrabajador": "0",
+    "AFPCapitalTasaDep": "11,44",
+    "AFPCapitalTasaSIS": "1,49",
+    "AFPCapitalTasaInd": "12,93",
+    "AFPCuprumTasaDep": "11,44",
+    "AFPCuprumTasaSIS": "1,49",
+    "AFPCuprumTasaInd": "12,93",
+    "AFPHabitatTasaDep": "11,27",
+    "AFPHabitatTasaSIS": "1,49",
+    "AFPHabitatTasaInd": "12,76",
+    "AFPPlanVitalTasaDep": "11,16",
+    "AFPPlanVitalTasaSIS": "1,49",
+    "AFPPlanVitalTasaInd": "12,65",
+    "AFPProVidaTasaDep": "11,45",
+    "AFPProVidaTasaSIS": "1,49",
+    "AFPProVidaTasaInd": "12,94",
+    "AFPModeloTasaDep": "10,58",
+    "AFPModeloTasaSIS": "1,49",
+    "AFPModeloTasaInd": "12,07",
+    "AFPUnoTasaDep": "10,49",
+    "AFPUnoTasaSIS": "1,49",
+    "AFPUnoTasaInd": "11,98",
+    "AFamTramoAMonto": "20328",
+    "AFamTramoADesde": "0",
+    "AFamTramoAHasta": "539328",
+    "AFamTramoBMonto": "12475",
+    "AFamTramoBDesde": "539328",
+    "AFamTramoBHasta": "787746",
+    "AFamTramoCMonto": "3942",
+    "AFamTramoCDesde": "787746",
+    "AFamTramoCHasta": "1228614",
+    "AFamTramoDMonto": "0",
+    "AFamTramoDDesde": "1228614",
+    "AFamTramoDHasta": "9999999999",
+    "TrabPesadoCalif": "4",
+    "TrabPesadoEmpl": "2",
+    "TrabPesadoTrabaj": "2",
+    "TrabMenosPesadoCalif": "2",
+    "TrabMenosPesadoEmpl": "1",
+    "TrabMenosPesadoTrabaj": "1",
+    "Dist7PorcCCAF": "3,1",
+    "Dist7PorcFonasa": "3,9"
 }
 ```
 
@@ -460,7 +462,7 @@ curl -X GET --header 'Accept: application/json' \
 
 Información sobre impuesto único de 2da categoría.
 
-La información sobre impuesto único se actualiza una vez al mes **(día 14)**, según la web del SII.
+La información sobre impuesto único se actualiza una vez al **día**, según la web del SII.
 
 <aside class="notice">
 El parámetro <i>periodo</i> tiene el formato MES/AÑO 
@@ -468,13 +470,13 @@ El parámetro <i>periodo</i> tiene el formato MES/AÑO
 
 ```python
 import requests
-response = requests.get("https://api.gael.cloud/general/public/impunico/062020")
+response = requests.get("https://api.gael.cloud/general/public/impunico/022024")
 print(response.text)
 ```
 
 ```shell
 curl -X GET --header 'Accept: application/json' \
-'https://api.gael.cloud/general/public/impunico/062020'
+'https://api.gael.cloud/general/public/impunico/022024'
 ```
 
 ```javascript
@@ -485,20 +487,53 @@ curl -X GET --header 'Accept: application/json' \
 
 ```json
 {
-  "ImpUnicoID": 14,
-  "FechaUpdate": "2020-06-20T20:00:03.000Z",
-  "PeriodoMY": "062020",
-  "PeriodoYM": "2006",
-  "PeriodoNombre": "Junio 2020",
-  "FechaDesde": "2020-06-01T04:00:00.000Z",
-  "FechaHasta": "2020-06-30T04:00:00.000Z",
-  "TR1Desde": "0",
-  "TR1Hasta": "680022,00",
-  "TR1Factor": "0",
-  "TR1CReb": "0",
-  "TR1TIEfectiva": "0",
-  "TR2Desde": "680022,01",
-  .......
+    "ImpUnicoID": 1051,
+    "FechaUpdate": "2024-02-13T13:36:51.470Z",
+    "PeriodoMY": "022024",
+    "PeriodoYM": "2402",
+    "PeriodoNombre": "Febrero 2024",
+    "FechaDesde": "2024-02-01T00:00:00.000Z",
+    "FechaHasta": "2024-02-29T00:00:00.000Z",
+    "TR1Desde": "0",
+    "TR1Hasta": "868630,50",
+    "TR1Factor": "0",
+    "TR1CReb": "0",
+    "TR1TIEfectiva": "0",
+    "TR2Desde": "868630,51",
+    "TR2Hasta": "1930290,00",
+    "TR2Factor": "0,04",
+    "TR2CReb": "34745,22",
+    "TR2TIEfectiva": "2,20",
+    "TR3Desde": "1930290,01",
+    "TR3Hasta": "3217150,00",
+    "TR3Factor": "0,08",
+    "TR3CReb": "111956,82",
+    "TR3TIEfectiva": "4,52",
+    "TR4Desde": "3217150,01",
+    "TR4Hasta": "4504010,00",
+    "TR4Factor": "0,135",
+    "TR4CReb": "288900,07",
+    "TR4TIEfectiva": "7,09",
+    "TR5Desde": "4504010,01",
+    "TR5Hasta": "5790870,00",
+    "TR5Factor": "0,23",
+    "TR5CReb": "716781,02",
+    "TR5TIEfectiva": "10,62",
+    "TR6Desde": "5790870,01",
+    "TR6Hasta": "7721160,00",
+    "TR6Factor": "0,304",
+    "TR6CReb": "1145305,40",
+    "TR6TIEfectiva": "15,57",
+    "TR7Desde": "7721160,01",
+    "TR7Hasta": "19946330,00",
+    "TR7Factor": "0,35",
+    "TR7CReb": "1500478,76",
+    "TR7TIEfectiva": "27,48",
+    "TR8Desde": "19946330,01",
+    "TR8Hasta": "99999999",
+    "TR8Factor": "0,4",
+    "TR8CReb": "2497795,26",
+    "TR8TIEfectiva": "27,48"
 }
 ```
 
