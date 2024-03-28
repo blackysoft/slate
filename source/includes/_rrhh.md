@@ -43,25 +43,25 @@ Parámetro | Requerido | Tipo | Descripción | Default
 <b>id</b> | Obligatorio | `int` | *Id de la solicitud de vacaciones* | `null`
 <b>formato</b> | Obligatorio | `string` | `pdf` `html` | *Formato del comprobante* | `null`
 
-## Ficha de vacaciones
+## Certificado de vacaciones
 
-Obtiene la ficha de vacaciones, ya sea de un trabajador o de toda la planta de la empresa, en formato PDF o HTML
+Obtiene el certificado de vacaciones, ya sea de un trabajador o de toda la planta de la empresa, en formato PDF o HTML
 
-> Obtener la ficha de vacaciones para el empleado id = 26 de la empresa id = 2
+> Obtener el certificado de vacaciones para el empleado id = 26 de la empresa id = 2
 
 ```python
 #TO-DO
 ```
 
 ```shell
-#El siguiente ejemplo retorna la ficha de vacaciones en formato PDF
-curl "https://api.gael.cloud/v2/rrhh/vacaciones/ficha?empleado_id=26&empresa_id=2&formato=pdf" \
+#El siguiente ejemplo retorna el certificado de vacaciones en formato PDF
+curl "https://api.gael.cloud/v2/rrhh/vacaciones/certificado?empleado_id=26&empresa_id=2&formato=pdf" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
   -X GET \
-  --output ficha_vacaciones.pdf
+  --output certificado_vacaciones.pdf
 
-#El siguiente ejemplo retorna la ficha de vacaciones en formato HTML
-curl "https://api.gael.cloud/v2/rrhh/vacaciones/ficha?empleado_id=26&empresa_id=2&formato=html" \
+#El siguiente ejemplo retorna el certificado de vacaciones en formato HTML
+curl "https://api.gael.cloud/v2/rrhh/vacaciones/certificado?empleado_id=26&empresa_id=2&formato=html" \
   -H "ApiKey: xxxxxxxxxxxxxxxx" \
   -X GET
 ```
@@ -75,7 +75,7 @@ curl "https://api.gael.cloud/v2/rrhh/vacaciones/ficha?empleado_id=26&empresa_id=
 <aside class="api-endpoint">
     <div class="endpoint-data">
         <i class="label label-get">GET</i>
-        <h6>https://api.gael.cloud/v2/rrhh/vacaciones/ficha</h6>
+        <h6>https://api.gael.cloud/v2/rrhh/vacaciones/certificado</h6>
     </div>
 </aside>
 
@@ -85,7 +85,7 @@ Parámetro | Requerido | Tipo | Descripción | Default
 --------- | ------- | ----------- | ----------- | ----------- 
 <b>empleado_id</b> | Opcional | `int` | *Id del trabajador* | `null`
 <b>empresa_id</b> | Obligatorio | `int` | *Id de la empresa* | `null`
-<b>formato</b> | Obligatorio | `string` | `pdf` `html` | *Formato de la ficha* | `null`
+<b>formato</b> | Obligatorio | `string` | `pdf` `html` | *Formato del certificado* | `null`
 
 ## Certificado de antigüedad laboral
 
