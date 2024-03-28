@@ -510,7 +510,7 @@
                     <a href="#comprobante-de-vacaciones" class="toc-h2 toc-link" data-title="Comprobante de vacaciones">Comprobante de vacaciones</a>
                   </li>
                   <li>
-                    <a href="#ficha-de-vacaciones" class="toc-h2 toc-link" data-title="Ficha de vacaciones">Ficha de vacaciones</a>
+                    <a href="#certificado-de-vacaciones" class="toc-h2 toc-link" data-title="Certificado de vacaciones">Certificado de vacaciones</a>
                   </li>
                   <li>
                     <a href="#certificado-de-antiguedad-laboral" class="toc-h2 toc-link" data-title="Certificado de antigüedad laboral">Certificado de antigüedad laboral</a>
@@ -4318,21 +4318,21 @@ curl <span class="s2">"https://api.gael.cloud/v2/rrhh/vacaciones/comprobante?id=
 <td><em>Formato del comprobante</em></td>
 </tr>
 </tbody></table>
-<h2 id='ficha-de-vacaciones'>Ficha de vacaciones</h2>
-<p>Obtiene la ficha de vacaciones, ya sea de un trabajador o de toda la planta de la empresa, en formato PDF o HTML</p>
+<h2 id='certificado-de-vacaciones'>Certificado de vacaciones</h2>
+<p>Obtiene el certificado de vacaciones, ya sea de un trabajador o de toda la planta de la empresa, en formato PDF o HTML</p>
 
 <blockquote>
-<p>Obtener la ficha de vacaciones para el empleado id = 26 de la empresa id = 2</p>
+<p>Obtener el certificado de vacaciones para el empleado id = 26 de la empresa id = 2</p>
 </blockquote>
 <div class="highlight"><pre class="highlight python tab-python"><code><span class="c1">#TO-DO
-</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c">#El siguiente ejemplo retorna la ficha de vacaciones en formato PDF</span>
-curl <span class="s2">"https://api.gael.cloud/v2/rrhh/vacaciones/ficha?empleado_id=26&amp;empresa_id=2&amp;formato=pdf"</span> <span class="se">\</span>
+</span></code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c">#El siguiente ejemplo retorna el certificado de vacaciones en formato PDF</span>
+curl <span class="s2">"https://api.gael.cloud/v2/rrhh/vacaciones/certificado?empleado_id=26&amp;empresa_id=2&amp;formato=pdf"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"ApiKey: xxxxxxxxxxxxxxxx"</span> <span class="se">\</span>
   <span class="nt">-X</span> GET <span class="se">\</span>
-  <span class="nt">--output</span> ficha_vacaciones.pdf
+  <span class="nt">--output</span> certificado_vacaciones.pdf
 
-<span class="c">#El siguiente ejemplo retorna la ficha de vacaciones en formato HTML</span>
-curl <span class="s2">"https://api.gael.cloud/v2/rrhh/vacaciones/ficha?empleado_id=26&amp;empresa_id=2&amp;formato=html"</span> <span class="se">\</span>
+<span class="c">#El siguiente ejemplo retorna el certificado de vacaciones en formato HTML</span>
+curl <span class="s2">"https://api.gael.cloud/v2/rrhh/vacaciones/certificado?empleado_id=26&amp;empresa_id=2&amp;formato=html"</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s2">"ApiKey: xxxxxxxxxxxxxxxx"</span> <span class="se">\</span>
   <span class="nt">-X</span> GET
 </code></pre></div><div class="highlight"><pre class="highlight javascript tab-javascript"><code><span class="c1">//TO-DO</span>
@@ -4340,7 +4340,7 @@ curl <span class="s2">"https://api.gael.cloud/v2/rrhh/vacaciones/ficha?empleado_
 <aside class="api-endpoint">
     <div class="endpoint-data">
         <i class="label label-get">GET</i>
-        <h6>https://api.gael.cloud/v2/rrhh/vacaciones/ficha</h6>
+        <h6>https://api.gael.cloud/v2/rrhh/vacaciones/certificado</h6>
     </div>
 </aside>
 <h3 id='parametros-2'>Parámetros</h3>
@@ -4372,7 +4372,7 @@ curl <span class="s2">"https://api.gael.cloud/v2/rrhh/vacaciones/ficha?empleado_
 <td>Obligatorio</td>
 <td><code>string</code></td>
 <td><code>pdf</code> <code>html</code></td>
-<td><em>Formato de la ficha</em></td>
+<td><em>Formato del certificado</em></td>
 </tr>
 </tbody></table>
 <h2 id='certificado-de-antiguedad-laboral'>Certificado de antigüedad laboral</h2>
