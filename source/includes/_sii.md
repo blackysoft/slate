@@ -137,4 +137,5 @@ curl "https://api.gael.cloud/v2/integrations/sii/bhe_reporte?empresa_id=1&codigo
 Parámetro | Requerido | Tipo | Formato | Descripción | Default
 --------- | ------- | ----------- | ----------- | ----------- | ----------- 
 <b>empresa_id</b> | Opcional | `int` |  | *Id de la empresa* | `null`
-<b>codigo</b> | Obligatorio | `string` | | *Código de barras* | `null`
+<b>codigo</b> | Opcional | `string` | | *Código de barras* | `null`
+<b>docid</b> | Opcional | `int` | | *ID Documento de Compra* | `null`
